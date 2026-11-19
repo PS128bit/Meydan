@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 07 Ground details: photos, info, facilities, opening hours, owner, reviews, price bar -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.player.VenueDetailsActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ===== Photo header ===== -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+                <!-- Photos come from the server; swipeable gallery -->
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/pagerPhotos"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_photo_square" />
+
+                <ImageView
+                    android:id="@+id/imgCover"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/cd_venue_photo"
+                    android:paddingStart="56dp"
+                    android:paddingTop="70dp"
+                    android:paddingEnd="56dp"
+                    android:paddingBottom="70dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/court_futsal" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/bg_scrim_bottom" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/screen_margin">
+
+                    <ImageButton
+                        android:id="@+id/btnBack"
+                        style="@style/Widget.Meydan.RoundIcon.OnPhoto"
+                        android:contentDescription="@string/back"
+                        android:src="@drawable/ic_back" />
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <ImageButton
+                        android:id="@+id/btnShare"
+                        style="@style/Widget.Meydan.RoundIcon.OnPhoto"
+                        android:layout_marginEnd="10dp"
+                        android:contentDescription="@string/cd_share"
+                        android:src="@drawable/ic_share" />
+
+                    <ImageButton
+                        android:id="@+id/btnSave"
+                        style="@style/Widget.Meydan.RoundIcon.OnPhoto"
+                        android:contentDescription="@string/cd_save"
+                        android:src="@drawable/ic_heart" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtPhotoCount"
+                    style="@style/Text.Meydan.Badge"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginEnd="@dimen/screen_margin"
+                    android:layout_marginBottom="44dp"
+                    android:backgroundTint="@color/obsidian"
+                    android:fontFamily="@font/space_grotesk_bold"
+                    android:textColor="@color/white"
+                    tools:text="1 / 6" />
+            </FrameLayout>
+
+            <!-- ===== Body (sheet overlapping the photo) ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-28dp"
+                android:background="@drawable/bg_sheet_top"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/screen_margin"
+                android:paddingTop="24dp"
+                android:paddingEnd="@dimen/screen_margin"
+                android:paddingBottom="24dp">
+
+                <TextView
+                    android:id="@+id/txtSportType"
+                    style="@style/Text.Meydan.Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/mint_dark"
+                    tools:text="Futsal · Indoor" />
+
+                <TextView
+                    android:id="@+id/txtVenueName"
+                    style="@style/Text.Meydan.Headline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    tools:text="Kickoff Futsal Arena" />
+
+                <TextView
+                    android:id="@+id/txtAddress"
+                    style="@style/Text.Meydan.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:drawablePadding="6dp"
+                    android:gravity="center_vertical"
+                    android:textSize="14sp"
+                    app:drawableStartCompat="@drawable/ic_pin"
+                    app:drawableTint="@color/slate"
+                    tools:text="Street 7, F-11 Markaz, Islamabad · 1.2 km" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_star"
+                        app:tint="@color/vault_yellow" />
+
+                    <TextView
+                        android:id="@+id/txtRating"
+                        style="@style/Text.Meydan.Number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:textSize="15sp"
+                        tools:text="4.8" />
+
+                    <TextView
+                        android:id="@+id/txtReviewCount"
+                        style="@style/Text.Meydan.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:textSize="14sp"
+                        tools:text="126 reviews · Replies in ~15 min" />
+                </LinearLayout>
+
+                <!-- Quick facts -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        style="@style/Widget.Meydan.FactBox"
+                        android:layout_marginEnd="5dp">
+
+                        <TextView
+                            android:id="@+id/txtFactSize"
+                            style="@style/Text.Meydan.Number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="5 v 5" />
+
+                        <TextView
+                            style="@style/Text.Meydan.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fact_size"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/Widget.Meydan.FactBox"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp">
+
+                        <TextView
+                            android:id="@+id/txtFactSurface"
+                            style="@style/Text.Meydan.Number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="Turf" />
+
+                        <TextView
+                            style="@style/Text.Meydan.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fact_surface"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/Widget.Meydan.FactBox"
+                        android:layout_marginStart="5dp">
+
+                        <TextView
+                            android:id="@+id/txtFactCourts"
+                            style="@style/Text.Meydan.Number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="3" />
+
+                        <TextView
+                            style="@style/Text.Meydan.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fact_courts"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- About -->
+                <TextView
+                    style="@style/Text.Meydan.SectionHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/about_ground" />
+
+                <TextView
+                    android:id="@+id/txtAbout"
+                    style="@style/Text.Meydan.Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    tools:text="Covered 5-a-side pitch with new turf, floodlights and seating for 20. Bibs and a ball are free with every booking." />
+
+                <!-- Facilities -->
+                <TextView
+                    style="@style/Text.Meydan.SectionHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/facilities" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupFacilities"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.Meydan.Chip.Info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/facility_parking"
+                        app:chipIcon="@drawable/ic_parking" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.Meydan.Chip.Info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/facility_floodlights"
+                        app:chipIcon="@drawable/ic_bolt" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.Meydan.Chip.Info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/facility_changing"
+                        app:chipIcon="@drawable/ic_users" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.Meydan.Chip.Info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/facility_water"
+                        app:chipIcon="@drawable/ic_droplet" />
+                </com.google.android.material.chip.ChipGroup>
+
+                <!-- Opening hours: 24-hour bar -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/Text.Meydan.SectionHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/opening_hours" />
+
+                    <TextView
+                        android:id="@+id/txtOpenNow"
+                        style="@style/Text.Meydan.Badge.Confirmed"
+                        android:text="@string/open_now" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtHours"
+                    style="@style/Text.Meydan.Number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:textSize="15sp"
+                    tools:text="6:00 AM – 11:00 PM, every day" />
+
+                <include
+                    layout="@layout/view_day_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp" />
+
+                <!-- Owner -->
+                <TextView
+                    style="@style/Text.Meydan.SectionHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/owner" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Widget.Meydan.Card.Mist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txtOwnerInitials"
+                                style="@style/Widget.Meydan.Avatar"
+                                tools:text="AR" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtOwnerName"
+                                    style="@style/Text.Meydan.Subtitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    tools:text="Ali Raza" />
+
+                                <TextView
+                                    android:id="@+id/txtOwnerMeta"
+                                    style="@style/Text.Meydan.Caption"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    tools:text="★ 4.9 owner rating · 3 grounds" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/Text.Meydan.Caption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:drawablePadding="8dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/owner_contact_note"
+                            app:drawableStartCompat="@drawable/ic_shield"
+                            app:drawableTint="@color/mint_dark" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Reviews -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/Text.Meydan.SectionHeader"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/reviews" />
+
+                    <TextView
+                        android:id="@+id/txtSeeAllReviews"
+                        style="@style/Text.Meydan.Link"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/see_all" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvReviews"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_review" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ===== Bottom price bar ===== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/screen_margin"
+        android:paddingTop="12dp"
+        android:paddingEnd="@dimen/screen_margin"
+        android:paddingBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtPrice"
+                style="@style/Text.Meydan.Number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                tools:text="Rs 3,000" />
+
+            <TextView
+                style="@style/Text.Meydan.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/per_hour" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSeeSlots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="28dp"
+            android:paddingEnd="24dp"
+            android:text="@string/see_slots"
+            app:icon="@drawable/ic_arrow_right" />
+    </LinearLayout>
+</LinearLayout>
