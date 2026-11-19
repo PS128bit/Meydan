@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ground card used on Home ("Open near you") and Search results -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <!-- Photo (loaded from the server; court drawing is the placeholder) -->
+        <FrameLayout
+            android:layout_width="104dp"
+            android:layout_height="120dp">
+
+            <ImageView
+                android:id="@+id/imgVenue"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_photo"
+                android:contentDescription="@string/cd_venue_photo"
+                android:padding="14dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/court_futsal" />
+
+            <TextView
+                android:id="@+id/txtVenueSport"
+                style="@style/Text.Meydan.Badge"
+                android:layout_gravity="start|bottom"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/vault_yellow"
+                android:textColor="@color/obsidian"
+                android:textSize="10sp"
+                tools:text="FUTSAL" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="14dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtVenueName"
+                    style="@style/Text.Meydan.CardTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    tools:text="Kickoff Futsal Arena" />
+
+                <ImageView
+                    android:id="@+id/btnSave"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="6dp"
+                    android:contentDescription="@string/cd_save"
+                    android:src="@drawable/ic_heart"
+                    app:tint="@color/slate" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtVenueArea"
+                style="@style/Text.Meydan.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:drawablePadding="4dp"
+                android:gravity="center_vertical"
+                app:drawableStartCompat="@drawable/ic_pin"
+                app:drawableTint="@color/slate"
+                tools:text="F-11 Markaz · 1.2 km" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_star"
+                    app:tint="@color/vault_yellow" />
+
+                <TextView
+                    android:id="@+id/txtVenueRating"
+                    style="@style/Text.Meydan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:textSize="13sp"
+                    tools:text="4.8" />
+
+                <TextView
+                    android:id="@+id/txtVenueReviews"
+                    style="@style/Text.Meydan.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    tools:text="(126)" />
+            </LinearLayout>
+
+            <!-- Mini availability bars: one bar per evening hour -->
+            <LinearLayout
+                android:id="@+id/layoutAvailability"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <View style="@style/Widget.Meydan.AvailBar" />
+                <View style="@style/Widget.Meydan.AvailBar" />
+                <View style="@style/Widget.Meydan.AvailBar.Off" />
+                <View style="@style/Widget.Meydan.AvailBar.Off" />
+                <View style="@style/Widget.Meydan.AvailBar" />
+                <View style="@style/Widget.Meydan.AvailBar" />
+                <View style="@style/Widget.Meydan.AvailBar" />
+                <View style="@style/Widget.Meydan.AvailBar.Off" />
+                <View style="@style/Widget.Meydan.AvailBar" />
+                <View style="@style/Widget.Meydan.AvailBar" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtVenuePrice"
+                    style="@style/Text.Meydan.Number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Rs 3,000" />
+
+                <TextView
+                    style="@style/Text.Meydan.Caption"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_weight="1"
+                    android:text="@string/per_hour_short" />
+
+                <TextView
+                    android:id="@+id/txtVenueSlotsLeft"
+                    style="@style/Text.Meydan.Badge.Confirmed"
+                    android:textSize="11sp"
+                    tools:text="7 slots tonight" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

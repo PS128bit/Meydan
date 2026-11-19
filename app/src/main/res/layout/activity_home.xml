@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 04 Home (player) -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mist"
+    tools:context=".ui.player.HomeActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/nav_clearance">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ===== Dark header ===== -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_dark_header">
+
+                <ImageView
+                    android:layout_width="240dp"
+                    android:layout_height="240dp"
+                    android:layout_gravity="end|top"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="-110dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/art_header_rings" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/screen_margin"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="@dimen/screen_margin"
+                    android:paddingBottom="28dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <!-- Location picker -->
+                        <LinearLayout
+                            android:id="@+id/btnLocation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_pill"
+                            android:backgroundTint="@color/charcoal_raised"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:importantForAccessibility="no"
+                                android:src="@drawable/ic_pin"
+                                app:tint="@color/mint" />
+
+                            <TextView
+                                android:id="@+id/txtLocation"
+                                style="@style/Text.Meydan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginEnd="6dp"
+                                android:fontFamily="@font/inter_semibold"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                tools:text="F-11, Islamabad" />
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:importantForAccessibility="no"
+                                android:src="@drawable/ic_chevron_down"
+                                app:tint="@color/slate_light" />
+                        </LinearLayout>
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageButton
+                                android:id="@+id/btnNotifications"
+                                style="@style/Widget.Meydan.RoundIcon.OnDark"
+                                android:contentDescription="@string/nav_alerts"
+                                android:src="@drawable/ic_bell" />
+
+                            <View
+                                android:id="@+id/dotUnread"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:layout_gravity="top|end"
+                                android:layout_marginTop="9dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/bg_circle"
+                                android:backgroundTint="@color/vault_yellow" />
+                        </FrameLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtGreeting"
+                        style="@style/Text.Meydan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="28dp"
+                        android:fontFamily="@font/inter_medium"
+                        android:textColor="@color/slate_light"
+                        tools:text="Evening, Hamza" />
+
+                    <TextView
+                        style="@style/Text.Meydan.Display"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/home_title_1"
+                        android:textColor="@color/white" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Text.Meydan.Display"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/home_title_2"
+                            android:textColor="@color/mint" />
+
+                        <TextView
+                            style="@style/Text.Meydan.Display"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="9dp"
+                            android:text="@string/home_title_3"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                    <!-- Search box (opens Search results) -->
+                    <LinearLayout
+                        android:id="@+id/btnSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="22dp"
+                        android:background="@drawable/bg_rounded_16"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="6dp">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/ic_search"
+                            app:tint="@color/slate" />
+
+                        <TextView
+                            style="@style/Text.Meydan.Caption"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:text="@string/home_search_hint"
+                            android:textSize="15sp" />
+
+                        <ImageButton
+                            android:id="@+id/btnFilters"
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:background="@drawable/bg_rounded_12"
+                            android:backgroundTint="@color/mint"
+                            android:contentDescription="@string/filters"
+                            android:padding="11dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_sliders" />
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- ===== Pick your game ===== -->
+            <TextView
+                style="@style/Text.Meydan.SectionHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="26dp"
+                android:text="@string/home_pick_game" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSports"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/screen_margin"
+                android:paddingEnd="10dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="5"
+                tools:listitem="@layout/item_sport_tile" />
+
+            <!-- ===== Your next match ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/screen_margin"
+                android:paddingEnd="@dimen/screen_margin">
+
+                <TextView
+                    style="@style/Text.Meydan.SectionHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/home_next_match" />
+
+                <TextView
+                    android:id="@+id/txtAllBookings"
+                    style="@style/Text.Meydan.Link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/see_all" />
+            </LinearLayout>
+
+            <include
+                android:id="@+id/nextMatch"
+                layout="@layout/item_ticket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="@dimen/screen_margin" />
+
+            <!-- ===== Open near you ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/screen_margin"
+                android:paddingEnd="@dimen/screen_margin">
+
+                <TextView
+                    style="@style/Text.Meydan.SectionHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/home_open_near" />
+
+                <TextView
+                    android:id="@+id/txtSeeAllNear"
+                    style="@style/Text.Meydan.Link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/see_all" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvNearby"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:nestedScrollingEnabled="false"
+                android:paddingStart="@dimen/screen_margin"
+                android:paddingEnd="@dimen/screen_margin"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_venue_card" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/bottomNav"
+        layout="@layout/view_player_nav" />
+
+</FrameLayout>
