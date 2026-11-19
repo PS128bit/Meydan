@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 13 Rate your game: separate ratings for the ground and the owner, written review, photos -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.player.RateGameActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/screen_margin"
+            android:paddingTop="12dp"
+            android:paddingEnd="@dimen/screen_margin"
+            android:paddingBottom="24dp">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                style="@style/Widget.Meydan.RoundIcon"
+                android:contentDescription="@string/back"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                style="@style/Text.Meydan.Display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/rate_title_1"
+                android:textSize="32sp" />
+
+            <TextView
+                style="@style/Text.Meydan.Display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_highlight"
+                android:paddingStart="2dp"
+                android:paddingEnd="4dp"
+                android:text="@string/rate_title_2"
+                android:textSize="32sp" />
+
+            <!-- Which booking -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_rounded_16"
+                android:backgroundTint="@color/mist"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <ImageView
+                    android:layout_width="56dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_photo"
+                    android:contentDescription="@string/cd_venue_photo"
+                    android:padding="7dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/court_futsal" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtRateVenue"
+                        style="@style/Text.Meydan.CardTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        tools:text="Kickoff Futsal Arena" />
+
+                    <TextView
+                        android:id="@+id/txtRateWhen"
+                        style="@style/Text.Meydan.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Sat 23 Nov · 8 – 10 PM · Court 2" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- The ground -->
+            <TextView
+                style="@style/Text.Meydan.SectionHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="@string/rate_ground" />
+
+            <RatingBar
+                android:id="@+id/ratingGround"
+                style="@style/Widget.Meydan.RatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:rating="4" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupGroundTags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.Meydan.Chip.Mist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/tag_good_turf" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.Meydan.Chip.Mist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/tag_bright_lights" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.Meydan.Chip.Mist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tag_clean" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.Meydan.Chip.Mist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tag_easy_parking" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.Meydan.Chip.Mist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tag_overpriced" />
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- The owner -->
+            <TextView
+                style="@style/Text.Meydan.SectionHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/rate_owner" />
+
+            <RatingBar
+                android:id="@+id/ratingOwner"
+                style="@style/Widget.Meydan.RatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:rating="5" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupOwnerTags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.Meydan.Chip.Mist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/tag_quick_replies" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.Meydan.Chip.Mist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tag_friendly" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.Meydan.Chip.Mist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tag_on_time" />
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- Written review -->
+            <TextView
+                style="@style/Text.Meydan.FieldLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:labelFor="@id/etReview"
+                android:text="@string/rate_review_label" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilReview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:counterEnabled="true"
+                app:counterMaxLength="300">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etReview"
+                    style="@style/Widget.Meydan.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|start"
+                    android:hint="@string/rate_review_hint"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:maxLength="300"
+                    android:minLines="3" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Photos (uploaded to the server) -->
+            <TextView
+                style="@style/Text.Meydan.FieldLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/rate_photos_label" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/btnAddPhoto"
+                    android:layout_width="84dp"
+                    android:layout_height="84dp"
+                    android:background="@drawable/bg_dashed_box"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_camera"
+                        app:tint="@color/slate" />
+
+                    <TextView
+                        style="@style/Text.Meydan.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/add_photo"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvReviewPhotos"
+                    android:layout_width="0dp"
+                    android:layout_height="84dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_photo_thumb" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/Text.Meydan.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:text="@string/rate_verified_note"
+                android:textSize="12sp"
+                app:drawableStartCompat="@drawable/ic_shield"
+                app:drawableTint="@color/mint_dark" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="8dp"
+        android:paddingStart="@dimen/screen_margin"
+        android:paddingTop="12dp"
+        android:paddingEnd="@dimen/screen_margin"
+        android:paddingBottom="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPostReview"
+            style="@style/Widget.Meydan.Button.Dark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/post_review" />
+    </LinearLayout>
+</LinearLayout>
