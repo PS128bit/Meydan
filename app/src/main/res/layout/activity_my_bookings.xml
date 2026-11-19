@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 11 Your matches (My bookings): tabs, sync status, list of tickets -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mist"
+    tools:context=".ui.player.MyBookingsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/screen_margin"
+            android:paddingTop="20dp"
+            android:paddingEnd="@dimen/screen_margin">
+
+            <TextView
+                style="@style/Text.Meydan.Headline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/bookings_title" />
+
+            <TextView
+                android:id="@+id/txtSyncStatus"
+                style="@style/Text.Meydan.Badge.Confirmed"
+                android:drawablePadding="4dp"
+                android:gravity="center_vertical"
+                android:text="@string/all_synced"
+                app:drawableStartCompat="@drawable/ic_sync_small"
+                app:drawableTint="@color/mint_dark" />
+        </LinearLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabsBookings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@color/transparent"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            app:tabGravity="start"
+            app:tabIndicatorColor="@color/mint_dark"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorHeight="3dp"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/obsidian"
+            app:tabTextAppearance="@style/TextAppearance.Meydan.Tab"
+            app:tabTextColor="@color/slate">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_upcoming" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_pending" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_past" />
+        </com.google.android.material.tabs.TabLayout>
+
+        <View style="@style/Widget.Meydan.Divider" />
+
+        <!-- Waiting-to-sync banner: request made offline, queued in the local database -->
+        <LinearLayout
+            android:id="@+id/bannerPendingSync"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_margin"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="@dimen/screen_margin"
+            android:background="@drawable/bg_rounded_12"
+            android:backgroundTint="@color/mist_2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_cloud_off"
+                app:tint="@color/slate" />
+
+            <TextView
+                android:id="@+id/txtPendingSync"
+                style="@style/Text.Meydan.Caption"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:textColor="@color/obsidian"
+                tools:text="1 request is waiting to sync. It'll send when you're back online." />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvBookings"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/screen_margin"
+            android:paddingTop="6dp"
+            android:paddingEnd="@dimen/screen_margin"
+            android:paddingBottom="@dimen/nav_clearance"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_ticket" />
+    </LinearLayout>
+
+    <include
+        android:id="@+id/bottomNav"
+        layout="@layout/view_player_nav" />
+</FrameLayout>
