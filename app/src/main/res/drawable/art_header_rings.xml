@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Decorative centre-circle rings behind dark headers -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="240dp"
+    android:height="240dp"
+    android:viewportWidth="240"
+    android:viewportHeight="240">
+    <path
+        android:pathData="M238 120a118 118 0 1 1-236 0a118 118 0 1 1 236 0z"
+        android:strokeAlpha="0.16"
+        android:strokeColor="#FF2FD39A"
+        android:strokeWidth="2" />
+    <path
+        android:pathData="M190 120a70 70 0 1 1-140 0a70 70 0 1 1 140 0z"
+        android:strokeAlpha="0.22"
+        android:strokeColor="#FF2FD39A"
+        android:strokeWidth="2" />
+    <path
+        android:fillAlpha="0.5"
+        android:fillColor="#FF2FD39A"
+        android:pathData="M126 120a6 6 0 1 1-12 0a6 6 0 1 1 12 0z" />
+</vector>

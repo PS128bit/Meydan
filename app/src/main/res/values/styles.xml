@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ===================== TEXT ===================== -->
+    <!-- Bricolage Grotesque = headlines, Space Grotesk = numbers (prices, dates, times), Inter = body -->
+
+    <style name="Text.Meydan" parent="">
+        <item name="android:fontFamily">@font/inter_regular</item>
+        <item name="android:textColor">@color/obsidian</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="Text.Meydan.Display">
+        <item name="android:fontFamily">@font/bricolage_extrabold</item>
+        <item name="android:textSize">34sp</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:lineSpacingMultiplier">0.95</item>
+    </style>
+
+    <style name="Text.Meydan.Headline">
+        <item name="android:fontFamily">@font/bricolage_extrabold</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="Text.Meydan.Title">
+        <item name="android:fontFamily">@font/bricolage_bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Text.Meydan.CardTitle">
+        <item name="android:fontFamily">@font/bricolage_bold</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="Text.Meydan.Subtitle">
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Text.Meydan.Body">
+        <item name="android:textColor">@color/slate</item>
+        <item name="android:lineSpacingMultiplier">1.15</item>
+    </style>
+
+    <style name="Text.Meydan.Caption">
+        <item name="android:textColor">@color/slate</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="Text.Meydan.Label">
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="android:textColor">@color/slate</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:letterSpacing">0.12</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Text.Meydan.FieldLabel">
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <style name="Text.Meydan.Hint">
+        <item name="android:textColor">@color/slate</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginTop">6dp</item>
+    </style>
+
+    <style name="Text.Meydan.Number">
+        <item name="android:fontFamily">@font/space_grotesk_bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Text.Meydan.Number.Big">
+        <item name="android:textSize">30sp</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="Text.Meydan.Link">
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="android:textColor">@color/mint_dark</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Text.Meydan.SectionHeader" parent="Text.Meydan.Title">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <!-- Status badge (pill). Colours set per state below. -->
+    <style name="Text.Meydan.Badge">
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:background">@drawable/bg_pill</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Text.Meydan.Badge.Pending">
+        <item name="android:backgroundTint">@color/yellow_tint</item>
+        <item name="android:textColor">@color/yellow_dark</item>
+    </style>
+
+    <style name="Text.Meydan.Badge.Confirmed">
+        <item name="android:backgroundTint">@color/mint_tint</item>
+        <item name="android:textColor">@color/mint_dark</item>
+    </style>
+
+    <style name="Text.Meydan.Badge.Declined">
+        <item name="android:backgroundTint">@color/red_tint</item>
+        <item name="android:textColor">@color/red_dark</item>
+    </style>
+
+    <style name="Text.Meydan.Badge.Sync">
+        <item name="android:backgroundTint">@color/mist_2</item>
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <!-- ===================== BUTTONS ===================== -->
+
+    <style name="Widget.Meydan.Button" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/mint</item>
+        <item name="android:textColor">@color/obsidian</item>
+        <item name="iconTint">@color/obsidian</item>
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:minHeight">58dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="cornerRadius">18dp</item>
+        <item name="iconGravity">textEnd</item>
+        <item name="iconPadding">10dp</item>
+        <item name="iconSize">20dp</item>
+    </style>
+
+    <style name="Widget.Meydan.Button.Dark">
+        <item name="backgroundTint">@color/obsidian</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="iconTint">@color/mint</item>
+    </style>
+
+    <style name="Widget.Meydan.Button.Light">
+        <item name="backgroundTint">@color/mist</item>
+        <item name="android:textColor">@color/obsidian</item>
+    </style>
+
+    <style name="Widget.Meydan.Button.Outline" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/mist_2</item>
+        <item name="strokeWidth">1.5dp</item>
+        <item name="android:textColor">@color/obsidian</item>
+        <item name="iconTint">@color/obsidian</item>
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:minHeight">58dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="cornerRadius">18dp</item>
+    </style>
+
+    <style name="Widget.Meydan.Button.Outline.Danger">
+        <item name="strokeColor">@color/red_tint</item>
+        <item name="android:textColor">@color/red_dark</item>
+        <item name="iconTint">@color/red_dark</item>
+    </style>
+
+    <style name="Widget.Meydan.Button.Small">
+        <item name="android:minHeight">40dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+    </style>
+
+    <style name="Widget.Meydan.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textColor">@color/mint_dark</item>
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- Round 44dp icon button (back, bell, share, heart) -->
+    <style name="Widget.Meydan.RoundIcon" parent="">
+        <item name="android:layout_width">44dp</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:background">@drawable/bg_circle</item>
+        <item name="android:backgroundTint">@color/mist</item>
+        <item name="android:padding">11dp</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:tint">@color/obsidian</item>
+    </style>
+
+    <style name="Widget.Meydan.RoundIcon.OnDark">
+        <item name="android:backgroundTint">@color/charcoal_raised</item>
+        <item name="android:tint">@color/white</item>
+    </style>
+
+    <style name="Widget.Meydan.RoundIcon.OnPhoto">
+        <item name="android:backgroundTint">@color/white</item>
+    </style>
+
+    <!-- ===================== INPUTS ===================== -->
+
+    <style name="Widget.Meydan.TextField" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/mist</item>
+        <item name="boxStrokeColor">@color/field_stroke</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="boxCornerRadiusTopStart">16dp</item>
+        <item name="boxCornerRadiusTopEnd">16dp</item>
+        <item name="boxCornerRadiusBottomStart">16dp</item>
+        <item name="boxCornerRadiusBottomEnd">16dp</item>
+        <item name="hintEnabled">false</item>
+        <item name="startIconTint">@color/slate</item>
+        <item name="endIconTint">@color/slate</item>
+    </style>
+
+    <style name="Widget.Meydan.EditText" parent="">
+        <item name="android:fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/obsidian</item>
+        <item name="android:textColorHint">@color/slate_light</item>
+        <item name="android:minHeight">56dp</item>
+    </style>
+
+    <!-- ===================== CARDS & CHIPS ===================== -->
+
+    <style name="Widget.Meydan.Card" parent="Widget.Material3.CardView.Filled">
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="cardCornerRadius">22dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+    <style name="Widget.Meydan.Card.Dark">
+        <item name="cardBackgroundColor">@color/obsidian</item>
+    </style>
+
+    <style name="Widget.Meydan.Card.Mist">
+        <item name="cardBackgroundColor">@color/mist</item>
+    </style>
+
+    <style name="Widget.Meydan.Chip" parent="Widget.Material3.Chip.Filter">
+        <item name="chipBackgroundColor">@color/chip_bg</item>
+        <item name="android:textColor">@color/chip_text</item>
+        <item name="chipStrokeWidth">0dp</item>
+        <item name="chipCornerRadius">20dp</item>
+        <item name="chipMinHeight">40dp</item>
+        <item name="checkedIconVisible">false</item>
+        <item name="chipIconTint">@color/chip_text</item>
+        <item name="android:textAppearance">@style/TextAppearance.Meydan.Chip</item>
+    </style>
+
+    <style name="Widget.Meydan.Chip.Mist">
+        <item name="chipBackgroundColor">@color/chip_bg_mist</item>
+    </style>
+
+    <!-- Non-selectable info chip with an icon (facilities) -->
+    <style name="Widget.Meydan.Chip.Info" parent="Widget.Material3.Chip.Assist">
+        <item name="chipBackgroundColor">@color/mist</item>
+        <item name="android:textColor">@color/obsidian</item>
+        <item name="chipIconTint">@color/mint_dark</item>
+        <item name="chipIconSize">18dp</item>
+        <item name="chipStrokeWidth">0dp</item>
+        <item name="chipCornerRadius">14dp</item>
+        <item name="chipMinHeight">40dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Meydan.Chip</item>
+        <item name="android:clickable">false</item>
+    </style>
+
+    <style name="Widget.Meydan.Chip.Dark">
+        <item name="chipBackgroundColor">@color/chip_dark_bg</item>
+        <item name="android:textColor">@color/chip_dark_text</item>
+        <item name="chipIconTint">@color/chip_dark_text</item>
+    </style>
+
+    <style name="TextAppearance.Meydan.Chip" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="fontFamily">@font/inter_semibold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- ===================== NAVIGATION ===================== -->
+
+    <!-- Floating dark pill nav bar; the active tab gets a mint pill -->
+    <style name="Widget.Meydan.BottomNav" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:background">@drawable/bg_nav_pill</item>
+        <item name="backgroundTint">@color/obsidian</item>
+        <item name="itemIconTint">@color/nav_item</item>
+        <item name="itemTextColor">@color/nav_item</item>
+        <item name="itemIconSize">24dp</item>
+        <item name="labelVisibilityMode">unlabeled</item>
+        <item name="itemActiveIndicatorStyle">@style/Widget.Meydan.BottomNav.Indicator</item>
+        <item name="android:elevation">10dp</item>
+    </style>
+
+    <style name="Widget.Meydan.BottomNav.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/mint</item>
+        <item name="android:width">64dp</item>
+        <item name="android:height">40dp</item>
+    </style>
+
+    <!-- ===================== MISC ===================== -->
+
+    <style name="Widget.Meydan.Divider" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/mist_2</item>
+    </style>
+
+    <!-- Slot cell on the dark scoreboard picker -->
+    <style name="Widget.Meydan.Slot" parent="">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/space_grotesk_bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/bg_slot_open</item>
+    </style>
+
+    <style name="Widget.Meydan.Slot.Taken">
+        <item name="android:textColor">@color/line_dark</item>
+        <item name="android:background">@drawable/bg_slot_taken</item>
+    </style>
+
+    <style name="Widget.Meydan.Slot.Selected">
+        <item name="android:textColor">@color/obsidian</item>
+        <item name="android:background">@drawable/bg_slot_selected</item>
+    </style>
+
+    <!-- Mini availability bar (search cards) -->
+    <style name="Widget.Meydan.AvailBar" parent="">
+        <item name="android:layout_width">8dp</item>
+        <item name="android:layout_height">16dp</item>
+        <item name="android:layout_marginEnd">3dp</item>
+        <item name="android:background">@drawable/bg_rounded_4</item>
+        <item name="android:backgroundTint">@color/mint</item>
+    </style>
+
+    <style name="Widget.Meydan.AvailBar.Off">
+        <item name="android:backgroundTint">@color/mist_2</item>
+    </style>
+
+    <!-- Price histogram bar (filters); set layout_height per bar -->
+    <style name="Widget.Meydan.HistoBar" parent="">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginStart">2dp</item>
+        <item name="android:layout_marginEnd">2dp</item>
+        <item name="android:background">@drawable/bg_rounded_4</item>
+        <item name="android:backgroundTint">@color/mint</item>
+    </style>
+
+    <style name="Widget.Meydan.HistoBar.Off">
+        <item name="android:backgroundTint">@color/mist_2</item>
+    </style>
+
+    <!-- Quick fact box on Ground details -->
+    <style name="Widget.Meydan.FactBox" parent="">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/bg_rounded_16</item>
+        <item name="android:backgroundTint">@color/mist</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">14dp</item>
+    </style>
+
+    <!-- Label / value row in summaries -->
+    <style name="Widget.Meydan.SummaryRow" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!-- Initials avatar -->
+    <style name="Widget.Meydan.Avatar" parent="">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">@drawable/bg_circle</item>
+        <item name="android:backgroundTint">@color/mint_tint</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/bricolage_bold</item>
+        <item name="android:textColor">@color/mint_dark</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="Widget.Meydan.Avatar.Small">
+        <item name="android:layout_width">36dp</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:backgroundTint">@color/yellow_tint</item>
+        <item name="android:textColor">@color/yellow_dark</item>
+    </style>
+
+    <!-- Big input stars (Rate your game) -->
+    <style name="Widget.Meydan.RatingBar" parent="Widget.AppCompat.RatingBar">
+        <item name="android:numStars">5</item>
+        <item name="android:stepSize">1</item>
+        <item name="android:progressTint">@color/vault_yellow</item>
+        <item name="android:progressBackgroundTint">@color/mist_2</item>
+        <item name="android:secondaryProgressTint">@color/vault_yellow</item>
+    </style>
+
+    <style name="TextAppearance.Meydan.Tab" parent="TextAppearance.Material3.TitleSmall">
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="fontFamily">@font/inter_semibold</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- Stat box in the Profile header -->
+    <style name="Widget.Meydan.StatBox" parent="Widget.Meydan.FactBox">
+        <item name="android:backgroundTint">@color/charcoal_raised</item>
+    </style>
+
+    <!-- Settings rows on Profile -->
+    <style name="Widget.Meydan.SettingsRow" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="Widget.Meydan.SettingsIcon" parent="">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:importantForAccessibility">no</item>
+        <item name="android:tint">@color/slate</item>
+    </style>
+
+    <style name="Widget.Meydan.SettingsText" parent="Text.Meydan">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginStart">14dp</item>
+        <item name="android:fontFamily">@font/inter_medium</item>
+    </style>
+
+    <style name="Widget.Meydan.SettingsChevron" parent="">
+        <item name="android:layout_width">18dp</item>
+        <item name="android:layout_height">18dp</item>
+        <item name="android:importantForAccessibility">no</item>
+        <item name="android:src">@drawable/ic_chevron_right</item>
+        <item name="android:tint">@color/slate_light</item>
+    </style>
+
+    <!-- Day cell in date strips -->
+    <style name="Widget.Meydan.DayCell" parent="">
+        <item name="android:layout_width">56dp</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/bg_rounded_16</item>
+        <item name="android:backgroundTint">@color/charcoal_raised</item>
+    </style>
+
+</resources>

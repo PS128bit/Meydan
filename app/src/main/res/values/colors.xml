@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Meydan palette: emerald mint, obsidian, charcoal, slate, vault yellow, soft mist -->
+<resources>
+    <!-- Darks -->
+    <color name="obsidian">#FF0E1311</color>
+    <color name="charcoal">#FF1A2220</color>
+    <color name="charcoal_raised">#FF26302D</color>
+    <color name="line_dark">#FF35413D</color>
+
+    <!-- Neutrals -->
+    <color name="slate">#FF56655F</color>
+    <color name="slate_light">#FF9AA9A3</color>
+    <color name="mist">#FFEEF3F1</color>
+    <color name="mist_2">#FFDFE8E4</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Emerald mint (primary) -->
+    <color name="mint">#FF2FD39A</color>
+    <color name="mint_dark">#FF08754F</color>
+    <color name="mint_tint">#FFD3F5E7</color>
+    <color name="mint_faint">#212FD39A</color>
+
+    <!-- Vault yellow (accent) -->
+    <color name="vault_yellow">#FFF6C445</color>
+    <color name="yellow_tint">#FFFDF0C6</color>
+    <color name="yellow_dark">#FF6B4C00</color>
+
+    <!-- Errors / declined -->
+    <color name="red">#FFC2402B</color>
+    <color name="red_tint">#FFFBE1DC</color>
+    <color name="red_dark">#FF99291A</color>
+
+    <!-- Scrims -->
+    <color name="scrim">#99000000</color>
+    <color name="transparent">#00000000</color>
+</resources>

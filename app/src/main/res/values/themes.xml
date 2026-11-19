@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base app theme: light screens on soft mist -->
+    <style name="Theme.Meydan" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/mint_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/mint_tint</item>
+        <item name="colorOnPrimaryContainer">@color/obsidian</item>
+        <item name="colorSecondary">@color/obsidian</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/mint_tint</item>
+        <item name="colorOnSecondaryContainer">@color/obsidian</item>
+        <item name="colorTertiary">@color/vault_yellow</item>
+        <item name="colorOnTertiary">@color/obsidian</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/obsidian</item>
+        <item name="colorOnSurfaceVariant">@color/slate</item>
+        <item name="colorOutline">@color/mist_2</item>
+        <item name="colorError">@color/red</item>
+        <item name="android:colorBackground">@color/mist</item>
+        <item name="android:windowBackground">@color/mist</item>
+
+        <item name="android:statusBarColor">@color/mist</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/obsidian</item>
+
+        <item name="android:fontFamily">@font/inter_regular</item>
+        <item name="fontFamily">@font/inter_regular</item>
+
+        <!-- Default component styles -->
+        <item name="materialButtonStyle">@style/Widget.Meydan.Button</item>
+        <item name="textInputStyle">@style/Widget.Meydan.TextField</item>
+        <item name="materialCardViewStyle">@style/Widget.Meydan.Card</item>
+        <item name="bottomNavigationStyle">@style/Widget.Meydan.BottomNav</item>
+    </style>
+
+    <!-- Screens with a dark (obsidian) header: splash, log in, home, slot picker, owner home -->
+    <style name="Theme.Meydan.Dark" parent="Theme.Meydan">
+        <item name="android:statusBarColor">@color/obsidian</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!-- Splash: whole window is obsidian so there is no white flash on launch -->
+    <style name="Theme.Meydan.Splash" parent="Theme.Meydan.Dark">
+        <item name="android:windowBackground">@color/obsidian</item>
+    </style>
+
+    <!-- White-background screens (sign up, forms) -->
+    <style name="Theme.Meydan.White" parent="Theme.Meydan">
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+</resources>

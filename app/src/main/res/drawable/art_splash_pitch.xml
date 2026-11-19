@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Vertical football pitch markings for the splash background -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="322dp"
+    android:height="640dp"
+    android:viewportWidth="322"
+    android:viewportHeight="640">
+    <path
+        android:pathData="M11 1h300a10 10 0 0 1 10 10v618a10 10 0 0 1-10 10H11a10 10 0 0 1-10-10V11A10 10 0 0 1 11 1z M1 320h320 M235 320a74 74 0 1 1-148 0a74 74 0 1 1 148 0z M76 1v96h170V1 M76 639v-96h170v96 M121 1v36h80V1 M121 639v-36h80v36"
+        android:strokeWidth="2"
+        android:strokeColor="#FF2FD39A" />
+</vector>

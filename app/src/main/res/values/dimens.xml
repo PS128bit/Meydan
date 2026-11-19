@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_margin">20dp</dimen>
+    <!-- Bottom padding so scrolling content clears the floating nav bar -->
+    <dimen name="nav_clearance">112dp</dimen>
+</resources>

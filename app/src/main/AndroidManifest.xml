@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Meydan">
+
+        <activity
+            android:name=".ui.auth.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Meydan.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.auth.LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Meydan.Dark"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.auth.SignupActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Meydan.White"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.player.HomeActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Meydan.Dark" />
+        <activity
+            android:name=".ui.player.SearchResultsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Meydan.White"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.player.FiltersActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Meydan.White" />
+        <activity
+            android:name=".ui.player.VenueDetailsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Meydan.Dark" />
+        <activity
+            android:name=".ui.player.PickSlotActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Meydan.Dark" />
+        <activity
+            android:name=".ui.player.SendRequestActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.player.RequestSentActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Meydan.White" />
+        <activity
+            android:name=".ui.player.MyBookingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.player.BookingDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.player.RateGameActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Meydan.White"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.player.SavedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.player.NotificationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.player.ProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Meydan.Dark" />
+    </application>
+
+</manifest>

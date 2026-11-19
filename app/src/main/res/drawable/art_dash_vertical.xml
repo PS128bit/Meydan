@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Vertical dashed tear line on match tickets (stretched to fit) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="2dp"
+    android:height="120dp"
+    android:viewportWidth="2"
+    android:viewportHeight="120">
+    <path
+        android:pathData="M1 0v6 M1 10v6 M1 20v6 M1 30v6 M1 40v6 M1 50v6 M1 60v6 M1 70v6 M1 80v6 M1 90v6 M1 100v6 M1 110v6"
+        android:strokeColor="#FFDFE8E4"
+        android:strokeWidth="2" />
+</vector>

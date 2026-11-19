@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- General -->
+    <string name="app_name">Meydan</string>
+    <string name="wordmark">meydan</string>
+    <string name="back">Back</string>
+    <string name="close">Close</string>
+    <string name="next">Next</string>
+    <string name="or">or</string>
+    <string name="see_all">See all</string>
+    <string name="reset">Reset</string>
+    <string name="filters">Filters</string>
+    <string name="password">Password</string>
+    <string name="phone_prefix">+92</string>
+    <string name="per_hour">per hour</string>
+    <string name="per_hour_short">/hr</string>
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="this_weekend">This weekend</string>
+    <string name="pick_date">Pick a date</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_saved">Saved</string>
+    <string name="nav_bookings">Bookings</string>
+    <string name="nav_alerts">Alerts</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Sports -->
+    <string name="sport_futsal">Futsal</string>
+    <string name="sport_cricket">Cricket</string>
+    <string name="sport_padel">Padel</string>
+    <string name="sport_squash">Squash</string>
+    <string name="sport_table_tennis">Table tennis</string>
+    <string name="sport_swimming">Swimming</string>
+    <string name="sport_halls">Event halls</string>
+    <string name="sport_workshops">Workshops</string>
+
+    <!-- Facilities -->
+    <string name="facility_parking">Parking</string>
+    <string name="facility_floodlights">Floodlights</string>
+    <string name="facility_changing">Changing rooms</string>
+    <string name="facility_water">Drinking water</string>
+    <string name="facility_indoor">Indoor / covered</string>
+
+    <!-- 01 Splash -->
+    <string name="splash_tagline">Your ground is waiting.</string>
+    <string name="splash_sports">Futsal · Cricket · Padel · Squash · Halls</string>
+
+    <!-- 02 Log in -->
+    <string name="login_title_1">Back on</string>
+    <string name="login_title_2">the field.</string>
+    <string name="login_subtitle">Log in with your phone number or email.</string>
+    <string name="login_id_label">Phone number or email</string>
+    <string name="login_id_hint">e.g. 0300 1234567</string>
+    <string name="login_forgot">Forgot?</string>
+    <string name="login_password_hint">Enter your password</string>
+    <string name="login_button">Log in</string>
+    <string name="login_new_here">I\'m new here</string>
+    <string name="login_terms">By continuing you agree to the Terms and Privacy Policy.</string>
+
+    <!-- 03 Sign up -->
+    <string name="signup_title_1">Let\'s get you</string>
+    <string name="signup_title_2">on the pitch.</string>
+    <string name="signup_role_label">I want to</string>
+    <string name="signup_role_player">Book grounds</string>
+    <string name="signup_role_player_sub">Find and request slots</string>
+    <string name="signup_role_owner">List my ground</string>
+    <string name="signup_role_owner_sub">Get booking requests</string>
+    <string name="signup_name">Full name</string>
+    <string name="signup_name_hint">e.g. Hamza Khan</string>
+    <string name="signup_phone">Phone number</string>
+    <string name="signup_phone_hint">300 1234567</string>
+    <string name="signup_phone_help">Required. Booking updates come to this number.</string>
+    <string name="signup_email">Email (optional)</string>
+    <string name="signup_email_hint">you@email.com</string>
+    <string name="signup_email_help">Add it now or later from your profile.</string>
+    <string name="signup_password_hint">At least 8 characters</string>
+    <string name="signup_button">Create account</string>
+    <string name="signup_have_account">Already have an account?</string>
+
+    <!-- 04 Home -->
+    <string name="home_title_1">Where are we</string>
+    <string name="home_title_2">playing</string>
+    <string name="home_title_3">tonight?</string>
+    <string name="home_search_hint">Search futsal, padel, halls…</string>
+    <string name="home_pick_game">Pick your game</string>
+    <string name="home_next_match">Your next match</string>
+    <string name="home_open_near">Open near you</string>
+
+    <!-- 05 Search results -->
+    <string name="chip_tonight">Tonight</string>
+    <string name="chip_under_4000">Under Rs 4,000</string>
+    <string name="sort_price_low">Price: low to high</string>
+    <string name="search_offline_banner">You\'re offline. Showing grounds saved on your phone.</string>
+    <string name="search_empty_title">No grounds match</string>
+    <string name="search_empty_body">Try another sport, a wider price range or a different time.</string>
+
+    <!-- 06 Filters -->
+    <string name="filter_sport">Sport</string>
+    <string name="filter_price">Price per hour</string>
+    <string name="filter_price_min">Rs 500</string>
+    <string name="filter_price_max">Rs 6,000+</string>
+    <string name="filter_when">When</string>
+    <string name="time_morning">Morning</string>
+    <string name="time_afternoon">Afternoon</string>
+    <string name="time_evening">Evening</string>
+    <string name="time_night">Late night</string>
+    <string name="filter_distance">Distance</string>
+    <string name="filter_facilities">Facilities</string>
+
+    <!-- 07 Ground details -->
+    <string name="fact_size">Pitch size</string>
+    <string name="fact_surface">Surface</string>
+    <string name="fact_courts">Courts</string>
+    <string name="about_ground">About this ground</string>
+    <string name="facilities">Facilities</string>
+    <string name="opening_hours">Opening hours</string>
+    <string name="open_now">Open now</string>
+    <string name="hour_12am">12 AM</string>
+    <string name="hour_6am">6 AM</string>
+    <string name="hour_12pm">12 PM</string>
+    <string name="hour_6pm">6 PM</string>
+    <string name="owner">Owner</string>
+    <string name="owner_contact_note">The owner\'s number is shared with you once your booking is confirmed.</string>
+    <string name="reviews">Reviews</string>
+    <string name="see_slots">See slots</string>
+
+    <!-- 08 Pick a slot -->
+    <string name="pick_slot_title">Pick a slot</string>
+    <string name="court_1">Court 1</string>
+    <string name="court_2">Court 2</string>
+    <string name="court_3">Court 3</string>
+    <string name="pick_slot_day">Day</string>
+    <string name="pick_slot_time">Time</string>
+    <string name="legend_open">Open</string>
+    <string name="legend_picked">Picked</string>
+    <string name="legend_taken">Taken</string>
+    <string name="slot_4pm">4 PM</string>
+    <string name="slot_5pm">5 PM</string>
+    <string name="slot_6pm">6 PM</string>
+    <string name="slot_7pm">7 PM</string>
+    <string name="slot_8pm">8 PM</string>
+    <string name="slot_9pm">9 PM</string>
+    <string name="slot_10pm">10 PM</string>
+    <string name="slot_11pm">11 PM</string>
+    <string name="slot_12am">12 AM</string>
+    <string name="pick_slot_note">Pick back-to-back hours to play longer. Each slot is one hour.</string>
+
+    <!-- 09 Send request -->
+    <string name="send_request_title">Send request</string>
+    <string name="summary_date">Date</string>
+    <string name="summary_time">Time</string>
+    <string name="summary_rate">Rate</string>
+    <string name="summary_total">Total</string>
+    <string name="players">Players</string>
+    <string name="players_hint">Helps the owner prepare bibs</string>
+    <string name="message_owner">Message to the owner (optional)</string>
+    <string name="message_owner_hint">e.g. We\'ll bring our own ball. Can we get bibs?</string>
+    <string name="request_pay_note">No payment now. You pay at the ground after the owner confirms.</string>
+    <string name="request_offline_note">If you\'re offline, we\'ll send the request as soon as you\'re back online.</string>
+    <string name="send_request_button">Send request</string>
+
+    <!-- 10 Request sent -->
+    <string name="request_sent_title">Request\'s in.</string>
+    <string name="what_next">What happens next</string>
+    <string name="track_booking">Track my booking</string>
+    <string name="back_home">Back to home</string>
+
+    <!-- 11 Your matches -->
+    <string name="bookings_title">Your matches</string>
+    <string name="all_synced">All synced</string>
+    <string name="tab_upcoming">Upcoming</string>
+    <string name="tab_pending">Pending</string>
+    <string name="tab_past">Past</string>
+
+    <!-- 12 Booking details -->
+    <string name="booking_title">Booking</string>
+    <string name="booking_progress">Progress</string>
+    <string name="directions">Directions</string>
+    <string name="pay_at_ground">Pay the owner at the ground.</string>
+    <string name="cancel_booking">Cancel booking</string>
+    <string name="cancel_note">Free to cancel up to 6 hours before the match.</string>
+
+    <!-- 13 Rate your game -->
+    <string name="rate_title_1">How was</string>
+    <string name="rate_title_2">the game?</string>
+    <string name="rate_ground">The ground</string>
+    <string name="rate_owner">The owner</string>
+    <string name="tag_good_turf">Good turf</string>
+    <string name="tag_bright_lights">Bright lights</string>
+    <string name="tag_clean">Clean</string>
+    <string name="tag_easy_parking">Easy parking</string>
+    <string name="tag_overpriced">Overpriced</string>
+    <string name="tag_quick_replies">Quick replies</string>
+    <string name="tag_friendly">Friendly</string>
+    <string name="tag_on_time">Ready on time</string>
+    <string name="rate_review_label">Tell other players about it</string>
+    <string name="rate_review_hint">What was good? What could be better?</string>
+    <string name="rate_photos_label">Add photos (optional)</string>
+    <string name="add_photo">Add</string>
+    <string name="rate_verified_note">Only players who booked and played here can leave a review.</string>
+    <string name="post_review">Post review</string>
+
+    <!-- 14 Saved grounds -->
+    <string name="saved_title">Saved grounds</string>
+    <string name="all">All</string>
+    <string name="saved_empty_title">Nothing saved yet</string>
+    <string name="saved_empty_body">Tap the heart on any ground to keep it here. Saved grounds work offline too.</string>
+
+    <!-- 15 Alerts -->
+    <string name="alerts_title">Alerts</string>
+    <string name="mark_all_read">Mark all read</string>
+    <string name="earlier">Earlier</string>
+    <string name="alerts_enable_push">Turn on notifications so you know the moment an owner replies.</string>
+    <string name="turn_on">Turn on</string>
+
+    <!-- 16 Profile -->
+    <string name="stat_games">Games played</string>
+    <string name="stat_grounds">Grounds</string>
+    <string name="stat_rating">Player rating</string>
+    <string name="add_email_title">Add your email</string>
+    <string name="add_email_body">Optional. Helps you recover your account.</string>
+    <string name="add">Add</string>
+    <string name="section_account">Account</string>
+    <string name="row_personal">Personal details</string>
+    <string name="row_phone_email">Phone and email</string>
+    <string name="row_password">Change password</string>
+    <string name="section_app">App</string>
+    <string name="row_push">Push notifications</string>
+    <string name="row_sync">Offline data and sync</string>
+    <string name="sync_now">Sync now</string>
+    <string name="row_help">Help and support</string>
+    <string name="row_privacy">Privacy and terms</string>
+    <string name="owner_mode_title">Own a ground?</string>
+    <string name="owner_mode_body">Switch to owner mode to list it and get requests.</string>
+    <string name="log_out">Log out</string>
+
+    <!-- Content descriptions (accessibility) -->
+    <string name="cd_unsave">Remove from saved</string>
+    <string name="cd_change_photo">Change profile photo</string>
+    <string name="cd_edit_profile">Edit profile</string>
+    <string name="cd_venue_photo">Ground photo</string>
+    <string name="cd_save">Save ground</string>
+    <string name="cd_share">Share</string>
+    <string name="cd_more">More options</string>
+    <string name="cd_fewer_players">Fewer players</string>
+    <string name="cd_more_players">More players</string>
+    <string name="cd_message_owner">Message the owner</string>
+    <string name="cd_call_owner">Call the owner</string>
+    <string name="cd_review_photo">Review photo</string>
+    <string name="cd_remove_photo">Remove photo</string>
+</resources>
