@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 01 Splash: obsidian screen with faint pitch markings, logo and wordmark -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/obsidian"
+    tools:context=".ui.auth.SplashActivity">
+
+    <!-- Pitch markings in the background -->
+    <ImageView
+        android:id="@+id/imgPitch"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="96dp"
+        android:alpha="0.13"
+        android:importantForAccessibility="no"
+        android:scaleType="fitXY"
+        android:src="@drawable/art_splash_pitch"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_logo"
+        app:layout_constraintBottom_toTopOf="@id/layoutWordmark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <LinearLayout
+        android:id="@+id/layoutWordmark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/txtTagline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgLogo">
+
+        <TextView
+            android:id="@+id/txtWordmark"
+            style="@style/Text.Meydan.Display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="@string/wordmark"
+            android:textColor="@color/white"
+            android:textSize="58sp" />
+
+        <View
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_circle"
+            android:backgroundTint="@color/vault_yellow" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtTagline"
+        style="@style/Text.Meydan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/inter_medium"
+        android:text="@string/splash_tagline"
+        android:textColor="@color/slate_light"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutWordmark" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progressSplash"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:indeterminate="true"
+        app:indicatorColor="@color/mint"
+        app:layout_constraintBottom_toTopOf="@id/txtSports"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:trackColor="@color/charcoal_raised"
+        app:trackCornerRadius="2dp" />
+
+    <TextView
+        android:id="@+id/txtSports"
+        style="@style/Text.Meydan.Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="@string/splash_sports"
+        android:textColor="@color/slate_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
