@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 08 Pick a slot: dark "scoreboard" picker. Open = charcoal, picked = mint, taken = dashed. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/obsidian"
+    android:orientation="vertical"
+    tools:context=".ui.player.PickSlotActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="12dp"
+            android:paddingBottom="20dp">
+
+            <!-- Top bar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/screen_margin"
+                android:paddingEnd="@dimen/screen_margin">
+
+                <ImageButton
+                    android:id="@+id/btnBack"
+                    style="@style/Widget.Meydan.RoundIcon.OnDark"
+                    android:contentDescription="@string/back"
+                    android:src="@drawable/ic_back" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Text.Meydan.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pick_slot_title"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/txtSlotVenue"
+                        style="@style/Text.Meydan.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/slate_light"
+                        tools:text="Kickoff Futsal Arena" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Court picker -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:clipToPadding="false"
+                android:paddingStart="@dimen/screen_margin"
+                android:paddingEnd="@dimen/screen_margin"
+                android:scrollbars="none">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupCourt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:selectionRequired="true"
+                    app:singleLine="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.Meydan.Chip.Dark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/court_1" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.Meydan.Chip.Dark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/court_2" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.Meydan.Chip.Dark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/court_3" />
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <!-- Date strip (filled by an adapter in code) -->
+            <TextView
+                style="@style/Text.Meydan.Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="22dp"
+                android:text="@string/pick_slot_day"
+                android:textColor="@color/slate_light" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDays"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/screen_margin"
+                android:paddingEnd="12dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="7"
+                tools:listitem="@layout/item_day" />
+
+            <!-- Legend -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/screen_margin"
+                android:paddingEnd="@dimen/screen_margin">
+
+                <TextView
+                    style="@style/Text.Meydan.Label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/pick_slot_time"
+                    android:textColor="@color/slate_light" />
+
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:background="@drawable/bg_slot_open" />
+
+                <TextView
+                    style="@style/Text.Meydan.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="12dp"
+                    android:text="@string/legend_open"
+                    android:textColor="@color/slate_light"
+                    android:textSize="12sp" />
+
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:background="@drawable/bg_slot_selected" />
+
+                <TextView
+                    style="@style/Text.Meydan.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="12dp"
+                    android:text="@string/legend_picked"
+                    android:textColor="@color/slate_light"
+                    android:textSize="12sp" />
+
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:background="@drawable/bg_slot_taken" />
+
+                <TextView
+                    style="@style/Text.Meydan.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/legend_taken"
+                    android:textColor="@color/slate_light"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Scoreboard: hourly slots, 3 per row -->
+            <GridLayout
+                android:id="@+id/gridSlots"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:columnCount="3"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:useDefaultMargins="false">
+
+                <TextView style="@style/Widget.Meydan.Slot.Taken" android:text="@string/slot_4pm" />
+                <TextView style="@style/Widget.Meydan.Slot" android:text="@string/slot_5pm" />
+                <TextView style="@style/Widget.Meydan.Slot" android:text="@string/slot_6pm" />
+                <TextView style="@style/Widget.Meydan.Slot.Taken" android:text="@string/slot_7pm" />
+                <TextView style="@style/Widget.Meydan.Slot.Selected" android:text="@string/slot_8pm" />
+                <TextView style="@style/Widget.Meydan.Slot.Selected" android:text="@string/slot_9pm" />
+                <TextView style="@style/Widget.Meydan.Slot" android:text="@string/slot_10pm" />
+                <TextView style="@style/Widget.Meydan.Slot.Taken" android:text="@string/slot_11pm" />
+                <TextView style="@style/Widget.Meydan.Slot.Taken" android:text="@string/slot_12am" />
+            </GridLayout>
+
+            <TextView
+                style="@style/Text.Meydan.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/screen_margin"
+                android:paddingEnd="@dimen/screen_margin"
+                android:text="@string/pick_slot_note"
+                android:textColor="@color/slate_light"
+                app:drawableStartCompat="@drawable/ic_info"
+                app:drawableTint="@color/slate_light" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Summary panel -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_sheet_top"
+        android:backgroundTint="@color/charcoal"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/screen_margin"
+        android:paddingTop="18dp"
+        android:paddingEnd="@dimen/screen_margin"
+        android:paddingBottom="18dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtSelectedTime"
+                style="@style/Text.Meydan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="@color/slate_light"
+                android:textSize="13sp"
+                tools:text="2 hours · 8 – 10 PM" />
+
+            <TextView
+                android:id="@+id/txtSelectedTotal"
+                style="@style/Text.Meydan.Number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/mint"
+                android:textSize="24sp"
+                tools:text="Rs 6,000" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="28dp"
+            android:paddingEnd="24dp"
+            android:text="@string/next"
+            app:icon="@drawable/ic_arrow_right" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Day cell in the date strip on Pick a slot. The selected day is tinted mint in code. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cellDay"
+    style="@style/Widget.Meydan.DayCell"
+    android:clickable="true"
+    android:focusable="true">
+
+    <TextView
+        android:id="@+id/txtDayName"
+        style="@style/Text.Meydan.Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/slate_light"
+        tools:text="SAT" />
+
+    <TextView
+        android:id="@+id/txtDayNumber"
+        style="@style/Text.Meydan.Number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        tools:text="23" />
+</LinearLayout>
