@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 16 Profile: player info, stats, optional email, settings, offline sync, switch to owner mode, log out -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mist"
+    tools:context=".ui.player.ProfileActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/nav_clearance">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ===== Dark header ===== -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_dark_header">
+
+                <ImageView
+                    android:layout_width="220dp"
+                    android:layout_height="220dp"
+                    android:layout_gravity="end|top"
+                    android:layout_marginTop="-30dp"
+                    android:layout_marginEnd="-90dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/art_header_rings" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/screen_margin"
+                    android:paddingTop="20dp"
+                    android:paddingEnd="@dimen/screen_margin"
+                    android:paddingBottom="24dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <!-- Profile photo (uploaded to server); initials until set -->
+                        <FrameLayout
+                            android:layout_width="76dp"
+                            android:layout_height="76dp">
+
+                            <TextView
+                                android:id="@+id/txtProfileInitials"
+                                style="@style/Widget.Meydan.Avatar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="@color/mint"
+                                android:textColor="@color/obsidian"
+                                android:textSize="26sp"
+                                tools:text="HK" />
+
+                            <ImageButton
+                                android:id="@+id/btnChangePhoto"
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:layout_gravity="bottom|end"
+                                android:background="@drawable/bg_circle"
+                                android:backgroundTint="@color/vault_yellow"
+                                android:contentDescription="@string/cd_change_photo"
+                                android:padding="6dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_camera" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtProfileName"
+                                style="@style/Text.Meydan.Title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="22sp"
+                                tools:text="Hamza Khan" />
+
+                            <TextView
+                                android:id="@+id/txtProfilePhone"
+                                style="@style/Text.Meydan.Number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="@font/space_grotesk_medium"
+                                android:textColor="@color/slate_light"
+                                android:textSize="14sp"
+                                tools:text="+92 300 1234567" />
+
+                            <TextView
+                                android:id="@+id/txtProfileSince"
+                                style="@style/Text.Meydan.Caption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/slate_light"
+                                android:textSize="12sp"
+                                tools:text="Playing since March 2025" />
+                        </LinearLayout>
+
+                        <ImageButton
+                            android:id="@+id/btnEditProfile"
+                            style="@style/Widget.Meydan.RoundIcon.OnDark"
+                            android:contentDescription="@string/cd_edit_profile"
+                            android:src="@drawable/ic_edit" />
+                    </LinearLayout>
+
+                    <!-- Stats -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            style="@style/Widget.Meydan.StatBox"
+                            android:layout_marginEnd="5dp">
+
+                            <TextView
+                                android:id="@+id/txtStatGames"
+                                style="@style/Text.Meydan.Number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="22sp"
+                                tools:text="14" />
+
+                            <TextView
+                                style="@style/Text.Meydan.Caption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/stat_games"
+                                android:textColor="@color/slate_light"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            style="@style/Widget.Meydan.StatBox"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp">
+
+                            <TextView
+                                android:id="@+id/txtStatGrounds"
+                                style="@style/Text.Meydan.Number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="22sp"
+                                tools:text="6" />
+
+                            <TextView
+                                style="@style/Text.Meydan.Caption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/stat_grounds"
+                                android:textColor="@color/slate_light"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            style="@style/Widget.Meydan.StatBox"
+                            android:layout_marginStart="5dp">
+
+                            <TextView
+                                android:id="@+id/txtStatRating"
+                                style="@style/Text.Meydan.Number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/mint"
+                                android:textSize="22sp"
+                                tools:text="4.9" />
+
+                            <TextView
+                                style="@style/Text.Meydan.Caption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/stat_rating"
+                                android:textColor="@color/slate_light"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- ===== Add email nudge (email is optional at sign up) ===== -->
+            <LinearLayout
+                android:id="@+id/cardAddEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:background="@drawable/bg_rounded_16"
+                android:backgroundTint="@color/yellow_tint"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_mail"
+                    app:tint="@color/yellow_dark" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Text.Meydan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_semibold"
+                        android:text="@string/add_email_title"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        style="@style/Text.Meydan.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_email_body"
+                        android:textColor="@color/yellow_dark"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAddEmail"
+                    style="@style/Widget.Meydan.Button.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add"
+                    app:backgroundTint="@color/obsidian"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <!-- ===== Account ===== -->
+            <TextView
+                style="@style/Text.Meydan.Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="24dp"
+                android:text="@string/section_account" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="@dimen/screen_margin">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/rowPersonal"
+                        style="@style/Widget.Meydan.SettingsRow">
+
+                        <ImageView
+                            style="@style/Widget.Meydan.SettingsIcon"
+                            android:src="@drawable/ic_user" />
+
+                        <TextView
+                            style="@style/Widget.Meydan.SettingsText"
+                            android:text="@string/row_personal" />
+
+                        <ImageView
+                            style="@style/Widget.Meydan.SettingsChevron" />
+                    </LinearLayout>
+
+                    <View
+                        style="@style/Widget.Meydan.Divider"
+                        android:layout_marginStart="56dp" />
+
+                    <LinearLayout
+                        android:id="@+id/rowPhoneEmail"
+                        style="@style/Widget.Meydan.SettingsRow">
+
+                        <ImageView
+                            style="@style/Widget.Meydan.SettingsIcon"
+                            android:src="@drawable/ic_phone" />
+
+                        <TextView
+                            style="@style/Widget.Meydan.SettingsText"
+                            android:text="@string/row_phone_email" />
+
+                        <ImageView
+                            style="@style/Widget.Meydan.SettingsChevron" />
+                    </LinearLayout>
+
+                    <View
+                        style="@style/Widget.Meydan.Divider"
+                        android:layout_marginStart="56dp" />
+
+                    <LinearLayout
+                        android:id="@+id/rowPassword"
+                        style="@style/Widget.Meydan.SettingsRow">
+
+                        <ImageView
+                            style="@style/Widget.Meydan.SettingsIcon"
+                            android:src="@drawable/ic_lock" />
+
+                        <TextView
+                            style="@style/Widget.Meydan.SettingsText"
+                            android:text="@string/row_password" />
+
+                        <ImageView
+                            style="@style/Widget.Meydan.SettingsChevron" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ===== App ===== -->
+            <TextView
+                style="@style/Text.Meydan.Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="24dp"
+                android:text="@string/section_app" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="@dimen/screen_margin">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/rowPush"
+                        style="@style/Widget.Meydan.SettingsRow">
+
+                        <ImageView
+                            style="@style/Widget.Meydan.SettingsIcon"
+                            android:src="@drawable/ic_bell" />
+
+                        <TextView
+                            style="@style/Widget.Meydan.SettingsText"
+                            android:text="@string/row_push" />
+
+                        <com.google.android.material.materialswitch.MaterialSwitch
+                            android:id="@+id/switchPush"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:contentDescription="@string/row_push" />
+                    </LinearLayout>
+
+                    <View
+                        style="@style/Widget.Meydan.Divider"
+                        android:layout_marginStart="56dp" />
+
+                    <!-- Offline data & sync -->
+                    <LinearLayout
+                        android:id="@+id/rowSync"
+                        style="@style/Widget.Meydan.SettingsRow"
+                        android:layout_height="wrap_content"
+                        android:minHeight="64dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            style="@style/Widget.Meydan.SettingsIcon"
+                            android:src="@drawable/ic_sync" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/Text.Meydan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="@string/row_sync" />
+
+                            <TextView
+                                android:id="@+id/txtLastSynced"
+                                style="@style/Text.Meydan.Caption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                tools:text="Last synced 2 min ago · 1 item waiting" />
+                        </LinearLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnSyncNow"
+                            style="@style/Widget.Meydan.Button.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sync_now"
+                            app:backgroundTint="@color/mist" />
+                    </LinearLayout>
+
+                    <View
+                        style="@style/Widget.Meydan.Divider"
+                        android:layout_marginStart="56dp" />
+
+                    <LinearLayout
+                        android:id="@+id/rowHelp"
+                        style="@style/Widget.Meydan.SettingsRow">
+
+                        <ImageView
+                            style="@style/Widget.Meydan.SettingsIcon"
+                            android:src="@drawable/ic_help" />
+
+                        <TextView
+                            style="@style/Widget.Meydan.SettingsText"
+                            android:text="@string/row_help" />
+
+                        <ImageView
+                            style="@style/Widget.Meydan.SettingsChevron" />
+                    </LinearLayout>
+
+                    <View
+                        style="@style/Widget.Meydan.Divider"
+                        android:layout_marginStart="56dp" />
+
+                    <LinearLayout
+                        android:id="@+id/rowPrivacy"
+                        style="@style/Widget.Meydan.SettingsRow">
+
+                        <ImageView
+                            style="@style/Widget.Meydan.SettingsIcon"
+                            android:src="@drawable/ic_shield" />
+
+                        <TextView
+                            style="@style/Widget.Meydan.SettingsText"
+                            android:text="@string/row_privacy" />
+
+                        <ImageView
+                            style="@style/Widget.Meydan.SettingsChevron" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ===== Switch to owner mode (entry point to the owner app) ===== -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardOwnerMode"
+                style="@style/Widget.Meydan.Card.Dark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="40dp"
+                        android:importantForAccessibility="no"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/court_hall" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Text.Meydan.CardTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/owner_mode_title"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            style="@style/Text.Meydan.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/owner_mode_body"
+                            android:textColor="@color/slate_light"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_arrow_right"
+                        app:tint="@color/mint" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogout"
+                style="@style/Widget.Meydan.Button.Outline.Danger"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:text="@string/log_out"
+                app:icon="@drawable/ic_logout"
+                app:iconGravity="textStart" />
+
+            <TextView
+                android:id="@+id/txtVersion"
+                style="@style/Text.Meydan.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:textSize="12sp"
+                tools:text="Meydan 0.1 · Team Supernova" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/bottomNav"
+        layout="@layout/view_player_nav" />
+</FrameLayout>
