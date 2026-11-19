@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 10 Request sent: confirmation and what happens next -->
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
+    tools:context=".ui.player.RequestSentActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/screen_margin"
+        android:paddingTop="56dp"
+        android:paddingEnd="@dimen/screen_margin"
+        android:paddingBottom="20dp">
+
+        <!-- Big check -->
+        <FrameLayout
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bg_circle"
+            android:backgroundTint="@color/mint_tint">
+
+            <ImageView
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_circle"
+                android:backgroundTint="@color/mint"
+                android:importantForAccessibility="no"
+                android:padding="22dp"
+                android:src="@drawable/ic_check" />
+        </FrameLayout>
+
+        <TextView
+            style="@style/Text.Meydan.Display"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:gravity="center"
+            android:text="@string/request_sent_title" />
+
+        <TextView
+            android:id="@+id/txtSentBody"
+            style="@style/Text.Meydan.Body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            tools:text="Ali Raza usually replies in about 15 minutes. We'll send you a notification as soon as he does." />
+
+        <!-- What happens next -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Meydan.Card.Mist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    style="@style/Text.Meydan.Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    android:text="@string/what_next" />
+
+                <include
+                    android:id="@+id/stepSent"
+                    layout="@layout/item_timeline_step" />
+
+                <include
+                    android:id="@+id/stepOwner"
+                    layout="@layout/item_timeline_step" />
+
+                <include
+                    android:id="@+id/stepConfirmed"
+                    layout="@layout/item_timeline_step" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:minHeight="24dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTrackBooking"
+            style="@style/Widget.Meydan.Button.Dark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/track_booking"
+            app:icon="@drawable/ic_ticket"
+            app:iconGravity="textStart" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBackHome"
+            style="@style/Widget.Meydan.Button.Light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/back_home" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
