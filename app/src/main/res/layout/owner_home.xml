@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ownerRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/mist">
+
+    <!-- Dark weekly performance header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="18dp"
+        android:background="@drawable/bg_dark_header">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/txtOwnerGreeting"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Good evening, Usman"
+                android:textColor="@color/slate_light"
+                android:textSize="13sp" />
+            <FrameLayout
+                android:id="@+id/btnOwnerNotifications"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_owner_dark_pill"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_bell"
+                    app:tint="@color/white"
+                    android:contentDescription="Notifications" />
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:background="@drawable/bg_owner_price" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="T H I S   W E E K"
+            android:textColor="@color/slate_light"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtSlotsBooked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="38 slots booked"
+            android:textColor="@color/white"
+            android:textSize="29sp"
+            android:textStyle="bold"
+            android:letterSpacing="-0.03" />
+
+        <TextView
+            android:id="@+id/txtVenueOccupancy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Kickoff Futsal Arena · 72% of hours filled"
+            android:textColor="@color/slate_light"
+            android:textSize="11sp" />
+
+        <!-- Weekly bar chart -->
+        <LinearLayout
+            android:id="@+id/ownerWeeklyChart"
+            android:layout_width="match_parent"
+            android:layout_height="112dp"
+            android:layout_marginTop="15dp"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <LinearLayout style="@style/OwnerChartColumn">
+                <FrameLayout style="@style/OwnerChartTrack"><View style="@style/OwnerChartBar" android:layout_gravity="bottom" android:layout_height="37dp" /></FrameLayout>
+                <TextView style="@style/OwnerChartDay" android:text="M" />
+            </LinearLayout>
+            <LinearLayout style="@style/OwnerChartColumn">
+                <FrameLayout style="@style/OwnerChartTrack"><View style="@style/OwnerChartBar" android:layout_gravity="bottom" android:layout_height="43dp" /></FrameLayout>
+                <TextView style="@style/OwnerChartDay" android:text="T" />
+            </LinearLayout>
+            <LinearLayout style="@style/OwnerChartColumn">
+                <FrameLayout style="@style/OwnerChartTrack"><View style="@style/OwnerChartBar" android:layout_gravity="bottom" android:layout_height="32dp" /></FrameLayout>
+                <TextView style="@style/OwnerChartDay" android:text="W" />
+            </LinearLayout>
+            <LinearLayout style="@style/OwnerChartColumn">
+                <FrameLayout style="@style/OwnerChartTrack"><View android:layout_width="match_parent" android:layout_height="57dp" android:layout_gravity="bottom" android:background="@drawable/bg_owner_price" /></FrameLayout>
+                <TextView style="@style/OwnerChartDay" android:text="T" android:textColor="@color/white" />
+            </LinearLayout>
+            <LinearLayout style="@style/OwnerChartColumn">
+                <FrameLayout style="@style/OwnerChartTrack"><View style="@style/OwnerChartBar" android:layout_gravity="bottom" android:layout_height="68dp" /></FrameLayout>
+                <TextView style="@style/OwnerChartDay" android:text="F" />
+            </LinearLayout>
+            <LinearLayout style="@style/OwnerChartColumn">
+                <FrameLayout style="@style/OwnerChartTrack"><View style="@style/OwnerChartBar" android:layout_gravity="bottom" android:layout_height="75dp" /></FrameLayout>
+                <TextView style="@style/OwnerChartDay" android:text="S" />
+            </LinearLayout>
+            <LinearLayout style="@style/OwnerChartColumn">
+                <FrameLayout style="@style/OwnerChartTrack"><View style="@style/OwnerChartBar" android:layout_gravity="bottom" android:layout_height="49dp" /></FrameLayout>
+                <TextView style="@style/OwnerChartDay" android:text="S" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView style="@style/OwnerMetricChip" android:background="@drawable/bg_owner_price" android:text="ϟ  4 requests" android:textColor="@color/obsidian" />
+            <TextView style="@style/OwnerMetricChip" android:layout_marginStart="8dp" android:text="▦  3 today" />
+            <TextView style="@style/OwnerMetricChip" android:layout_marginStart="8dp" android:text="★  4.8 rating" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Requests area -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingTop="14dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Needs your answer"
+                android:textColor="@color/obsidian"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/txtSeeAllRequests"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="See all 4"
+                android:textColor="@color/mint_dark"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:fillViewport="false"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="9dp"
+            android:paddingBottom="8dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/item_owner_request_hamza" />
+                <include layout="@layout/item_owner_request_bilal" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <!-- Owner-specific navigation -->
+    <LinearLayout
+        android:id="@+id/ownerBottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="8dp"
+        android:padding="5dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_owner_dark_pill">
+        <TextView android:id="@+id/navOwnerHome" style="@style/OwnerNavSelected" android:text="▦  Home" />
+        <TextView android:id="@+id/navOwnerRequests" style="@style/OwnerNavItem" android:text="☷" android:contentDescription="Requests" />
+        <TextView android:id="@+id/navOwnerCalendar" style="@style/OwnerNavItem" android:text="▣" android:contentDescription="Calendar" />
+        <TextView android:id="@+id/navOwnerVenue" style="@style/OwnerNavItem" android:text="▤" android:contentDescription="Venue" />
+        <TextView android:id="@+id/navOwnerProfile" style="@style/OwnerNavItem" android:text="♙" android:contentDescription="Profile" />
+    </LinearLayout>
+</LinearLayout>

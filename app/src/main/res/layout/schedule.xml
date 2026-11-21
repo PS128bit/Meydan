@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mist">
+
+    <LinearLayout
+        android:id="@+id/ownerScheduleHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="9dp"
+        android:paddingEnd="9dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="6dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <TextView style="@style/Text.Meydan.Title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Schedule" android:textSize="20sp"/>
+        <LinearLayout android:id="@+id/ownerScheduleVenueSelector" android:layout_width="match_parent" android:layout_height="30dp" android:layout_marginTop="6dp" android:background="@drawable/bg_owner_schedule_selector" android:gravity="center_vertical" android:paddingStart="9dp" android:paddingEnd="9dp" android:orientation="horizontal">
+            <ImageView android:layout_width="14dp" android:layout_height="14dp" android:src="@drawable/ic_building" app:tint="@color/obsidian"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="7dp" android:layout_weight="1" android:text="Kickoff Futsal Arena" android:textColor="@color/obsidian" android:textSize="9sp" android:fontFamily="@font/inter_semibold"/>
+            <ImageView android:layout_width="13dp" android:layout_height="13dp" android:src="@drawable/ic_chevron_down" app:tint="@color/obsidian"/>
+        </LinearLayout>
+        <HorizontalScrollView android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="6dp" android:scrollbars="none">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:orientation="horizontal">
+                <LinearLayout android:id="@+id/scheduleDayThu" style="@style/Widget.Meydan.OwnerDateItem" android:layout_width="40dp" android:layout_height="46dp" android:background="@drawable/bg_owner_date_unselected">
+                    <TextView style="@style/Widget.Meydan.OwnerDateSmall" android:text="THU"/><TextView style="@style/Widget.Meydan.OwnerDateBig" android:text="12"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/scheduleDayFri" style="@style/Widget.Meydan.OwnerDateItem" android:layout_width="40dp" android:layout_height="46dp" android:layout_marginStart="5dp" android:background="@drawable/bg_owner_date_selected">
+                    <TextView style="@style/Widget.Meydan.OwnerDateSmall" android:text="FRI" android:textColor="@color/white"/><TextView style="@style/Widget.Meydan.OwnerDateBig" android:text="13" android:textColor="@color/white"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/scheduleDaySat" style="@style/Widget.Meydan.OwnerDateItem" android:layout_width="40dp" android:layout_height="46dp" android:layout_marginStart="5dp" android:background="@drawable/bg_owner_date_unselected">
+                    <TextView style="@style/Widget.Meydan.OwnerDateSmall" android:text="SAT"/><TextView style="@style/Widget.Meydan.OwnerDateBig" android:text="14"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/scheduleDaySun" style="@style/Widget.Meydan.OwnerDateItem" android:layout_width="40dp" android:layout_height="46dp" android:layout_marginStart="5dp" android:background="@drawable/bg_owner_date_unselected">
+                    <TextView style="@style/Widget.Meydan.OwnerDateSmall" android:text="SUN"/><TextView style="@style/Widget.Meydan.OwnerDateBig" android:text="15"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/scheduleDayMon" style="@style/Widget.Meydan.OwnerDateItem" android:layout_width="40dp" android:layout_height="46dp" android:layout_marginStart="5dp" android:background="@drawable/bg_owner_date_unselected">
+                    <TextView style="@style/Widget.Meydan.OwnerDateSmall" android:text="MON"/><TextView style="@style/Widget.Meydan.OwnerDateBig" android:text="16"/>
+                </LinearLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="22dp" android:layout_marginTop="4dp" android:gravity="center_vertical" android:orientation="horizontal">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/bg_owner_schedule_booked" android:paddingStart="8dp" android:paddingEnd="8dp" android:paddingTop="4dp" android:paddingBottom="4dp" android:text="4 booked" android:textColor="@color/white" android:textSize="8sp" android:fontFamily="@font/inter_semibold"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="5dp" android:background="@drawable/bg_owner_schedule_pending" android:paddingStart="8dp" android:paddingEnd="8dp" android:paddingTop="4dp" android:paddingBottom="4dp" android:text="1 pending" android:textColor="@color/yellow_dark" android:textSize="8sp" android:fontFamily="@font/inter_semibold"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="5dp" android:background="@drawable/bg_owner_schedule_open" android:paddingStart="8dp" android:paddingEnd="8dp" android:paddingTop="4dp" android:paddingBottom="4dp" android:text="6 open" android:textColor="@color/mint_dark" android:textSize="8sp" android:fontFamily="@font/inter_semibold"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/ownerScheduleScroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="80dp"
+        app:layout_constraintTop_toBottomOf="@id/ownerScheduleHeader"
+        app:layout_constraintBottom_toTopOf="@id/ownerBottomNavigation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+
+            <include layout="@layout/item_owner_schedule_slot_open"/>
+            <include layout="@layout/item_owner_schedule_slot_booked"/>
+            <include layout="@layout/item_owner_schedule_slot_booked_second"/>
+            <include layout="@layout/item_owner_schedule_slot_pending"/>
+            <include layout="@layout/item_owner_schedule_slot_open_evening"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/ownerBottomNavigation"
+        layout="@layout/view_owner_nav_schedule"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

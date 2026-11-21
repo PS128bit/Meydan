@@ -475,4 +475,125 @@
         <item name="android:backgroundTint">@color/charcoal_raised</item>
     </style>
 
+
+    <!-- Owner dashboard -->
+    <style name="OwnerChartColumn">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">bottom|center_horizontal</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:paddingEnd">4dp</item>
+    </style>
+    <style name="OwnerChartTrack">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">82dp</item>
+        <item name="android:background">@drawable/bg_rounded_12</item>
+        <item name="android:backgroundTint">@color/charcoal_raised</item>
+    </style>
+    <style name="OwnerChartBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/bg_owner_accept</item>
+    </style>
+    <style name="OwnerChartDay">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:textColor">@color/slate_light</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+    <style name="OwnerMetricChip">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:background">@drawable/bg_owner_dark_pill</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:fontFamily">@font/inter_semibold</item>
+    </style>
+    <style name="OwnerNavItem">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/slate_light</item>
+        <item name="android:textSize">21sp</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+    </style>
+    <style name="OwnerNavSelected" parent="OwnerNavItem">
+        <item name="android:layout_weight">1.55</item>
+        <item name="android:background">@drawable/bg_owner_accept</item>
+        <item name="android:textColor">@color/obsidian</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/inter_semibold</item>
+    </style>
+
+    <!-- ===================== OWNER ONBOARDING / MANAGEMENT ===================== -->
+
+    <style name="Widget.Meydan.OwnerDay">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/obsidian</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Widget.Meydan.OwnerSegment" parent="Widget.Material3.Button">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">9sp</item>
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="backgroundTint">@color/mist</item>
+        <item name="android:textColor">@color/slate</item>
+        <item name="cornerRadius">18dp</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+    <style name="Widget.Meydan.OwnerTab" parent="Widget.Material3.Button">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">9sp</item>
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="backgroundTint">@color/mist_2</item>
+        <item name="android:textColor">@color/slate</item>
+        <item name="cornerRadius">18dp</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+    <style name="Widget.Meydan.OwnerDateItem">
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="Widget.Meydan.OwnerDateSmall">
+        <item name="android:textSize">7sp</item>
+        <item name="android:textColor">@color/slate</item>
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Widget.Meydan.OwnerDateBig">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/obsidian</item>
+        <item name="android:fontFamily">@font/space_grotesk_bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Widget.Meydan.OwnerNavItem">
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="Widget.Meydan.OwnerNavItem.Selected">
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@drawable/bg_owner_nav_selected</item>
+    </style>
+
 </resources>
