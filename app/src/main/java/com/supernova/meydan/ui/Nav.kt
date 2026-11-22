@@ -19,6 +19,10 @@ import com.supernova.meydan.ui.player.MyBookingsActivity
 import com.supernova.meydan.ui.player.NotificationsActivity
 import com.supernova.meydan.ui.player.ProfileActivity
 import com.supernova.meydan.ui.player.SavedActivity
+import com.supernova.meydan.ui.owner.AddGroundDetailsActivity
+import com.supernova.meydan.ui.owner.OwnerHomeActivity
+import com.supernova.meydan.ui.owner.OwnerRequestsActivity
+import com.supernova.meydan.ui.owner.OwnerScheduleActivity
 import java.util.Locale
 
 /* Shared navigation and UI helpers used by every screen. */
@@ -29,6 +33,7 @@ const val EXTRA_SPORT = "extra_sport"
 const val EXTRA_HOURS = "extra_hours"
 const val EXTRA_SLOTS = "extra_slots"
 const val EXTRA_DAY = "extra_day"
+const val EXTRA_REQUEST = "extra_request"
 
 /** Opens another screen. Usage: navigate(VenueDetailsActivity::class.java) { putExtra(EXTRA_VENUE, 0) } */
 fun Activity.navigate(cls: Class<out Activity>, extras: Intent.() -> Unit = {}) {
@@ -76,6 +81,27 @@ fun Activity.setupPlayerNav(selected: Int) {
             )
         )
         false // keep this screen's tab highlighted; the opened screen highlights its own
+    }
+}
+
+/** Wires the floating owner nav bar (Home, Requests, Schedule, Grounds). */
+fun Activity.setupOwnerNav(selected: Int) {
+    val nav = findViewById<BottomNavigationView>(R.id.bottomNav)
+    nav.selectedItemId = selected
+    nav.setOnItemSelectedListener { item ->
+        if (item.itemId == selected) return@setOnItemSelectedListener true
+        val target: Class<out Activity> = when (item.itemId) {
+            R.id.nav_owner_home -> OwnerHomeActivity::class.java
+            R.id.nav_owner_requests -> OwnerRequestsActivity::class.java
+            R.id.nav_owner_schedule -> OwnerScheduleActivity::class.java
+            else -> AddGroundDetailsActivity::class.java
+        }
+        startActivity(
+            Intent(this, target).addFlags(
+                Intent.FLAG_ACTIVITY_REORDER_TO_FRONT or Intent.FLAG_ACTIVITY_NO_ANIMATION
+            )
+        )
+        false
     }
 }
 

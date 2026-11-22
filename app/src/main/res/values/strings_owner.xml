@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Strings for the owner screens (17–23). Kept apart from strings.xml so player and owner work don't clash. -->
+<resources>
+
+    <!-- Shared -->
+    <string name="day_m">M</string>
+    <string name="day_t">T</string>
+    <string name="day_w">W</string>
+    <string name="day_f">F</string>
+    <string name="day_s">S</string>
+    <string name="owner_nav_requests">Requests</string>
+    <string name="owner_nav_schedule">Schedule</string>
+    <string name="owner_nav_grounds">Grounds</string>
+    <string name="owner_accept">Accept</string>
+    <string name="owner_decline">Decline</string>
+    <string name="owner_rs">Rs</string>
+
+    <!-- 17 Owner home -->
+    <string name="owner_this_week">This week</string>
+    <string name="owner_slots_booked">slots booked</string>
+    <string name="owner_needs_answer">Needs your answer</string>
+
+    <!-- 18 Add ground: details -->
+    <string name="owner_step_1">1 / 3</string>
+    <string name="owner_add1_title_1">Tell players</string>
+    <string name="owner_add1_title_2">about your ground.</string>
+    <string name="owner_more">More</string>
+    <string name="owner_ground_name">Ground name</string>
+    <string name="owner_ground_name_hint">e.g. Kickoff Futsal Arena</string>
+    <string name="owner_location">Location</string>
+    <string name="owner_location_hint">e.g. F-11 Markaz, Islamabad</string>
+    <string name="owner_pick_on_map">Pick on map</string>
+    <string name="owner_description">Description</string>
+    <string name="owner_description_hint">Indoor 5-a-side court with artificial turf and floodlights. Open late.</string>
+    <string name="owner_facility_water">Water</string>
+    <string name="owner_facility_washrooms">Washrooms</string>
+    <string name="owner_facility_cafe">Cafe</string>
+    <string name="owner_next_photos">Next: photos and price</string>
+
+    <!-- 19 Add ground: photos and price -->
+    <string name="owner_step_2">2 / 3</string>
+    <string name="owner_add2_title">Show it off.</string>
+    <string name="owner_add2_body">Add at least 3 photos. The first is your cover.</string>
+    <string name="owner_cover">COVER</string>
+    <string name="owner_cover_photo">Cover photo</string>
+    <string name="owner_uploading">Uploading</string>
+    <string name="owner_add_photo">Add photo</string>
+    <string name="owner_upload_note">Photos go to the cloud. Offline? They upload when you\'re back online.</string>
+    <string name="owner_pricing">Pricing per hour</string>
+    <string name="owner_price_standard">Standard</string>
+    <string name="owner_price_all_day">All day</string>
+    <string name="owner_price_peak">Peak</string>
+    <string name="owner_price_peak_hours">6 PM – 11 PM</string>
+    <string name="owner_edit_price">Edit price</string>
+    <string name="owner_next_availability">Next: availability</string>
+
+    <!-- 20 Add ground: availability -->
+    <string name="owner_step_3">3 / 3</string>
+    <string name="owner_add3_title_1">When can</string>
+    <string name="owner_add3_title_2">people play?</string>
+    <string name="owner_open_days">Open days</string>
+    <string name="owner_hours">Hours</string>
+    <string name="owner_tick_12a">12A</string>
+    <string name="owner_tick_6a">6A</string>
+    <string name="owner_tick_12p">12P</string>
+    <string name="owner_tick_6p">6P</string>
+    <string name="owner_slot_length">Slot length</string>
+    <string name="owner_len_30">30 min</string>
+    <string name="owner_len_60">1 hour</string>
+    <string name="owner_len_120">2 hours</string>
+    <string name="owner_blocked_dates">Blocked dates</string>
+    <string name="owner_add_date">+ Add date</string>
+    <string name="owner_remove_date">Remove blocked date</string>
+    <string name="owner_players_will_see">Players will see</string>
+    <string name="owner_publish">Publish ground</string>
+
+    <!-- 21 Requests -->
+    <string name="owner_tab_pending">Pending</string>
+    <string name="owner_tab_accepted">Accepted</string>
+    <string name="owner_tab_declined">Declined</string>
+    <string name="owner_requests_empty">Nothing here yet.</string>
+
+    <!-- 22 Request details -->
+    <string name="owner_booking_request">Booking request</string>
+    <string name="owner_paid_at_venue">Paid to you at the venue</string>
+    <string name="owner_fit_start">4 PM</string>
+    <string name="owner_fit_end">3 AM</string>
+    <string name="owner_fits_day">Fits your day. No clash with other bookings.</string>
+    <string name="owner_heads_up_2">Other players will see it as taken.</string>
+    <string name="owner_accept_request">Accept request</string>
+
+    <!-- 23 Schedule -->
+    <string name="owner_slot_open">Open</string>
+    <string name="owner_slot_block">Block</string>
+    <string name="owner_slot_waiting">Waiting for you</string>
+    <string name="owner_slot_review">Review</string>
+</resources>

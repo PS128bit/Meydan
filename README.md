@@ -4,7 +4,7 @@ Venue booking app for sports grounds, courts and event spaces. Software for Mobi
 
 ## Phase 2: Frontend (XML layouts)
 
-All player screens (01–16) from the Assignment 1 Figma design, built as XML layouts. The owner screens are being built separately.
+All 23 screens from the Assignment 1 Figma design, built as XML layouts: the player app (01–16) and the ground owner app (17–23).
 
 | # | Screen | Layout | Activity |
 |---|--------|--------|----------|
@@ -24,6 +24,13 @@ All player screens (01–16) from the Assignment 1 Figma design, built as XML la
 | 14 | Saved grounds | `activity_saved.xml` | `ui.player.SavedActivity` |
 | 15 | Alerts (notifications) | `activity_notifications.xml` | `ui.player.NotificationsActivity` |
 | 16 | Profile | `activity_profile.xml` | `ui.player.ProfileActivity` |
+| 17 | Owner home | `activity_owner_home.xml` | `ui.owner.OwnerHomeActivity` |
+| 18 | Add ground: details | `activity_owner_add_ground_details.xml` | `ui.owner.AddGroundDetailsActivity` |
+| 19 | Add ground: photos and price | `activity_owner_add_ground_photos.xml` | `ui.owner.AddGroundPhotosActivity` |
+| 20 | Add ground: availability | `activity_owner_add_ground_availability.xml` | `ui.owner.AddGroundAvailabilityActivity` |
+| 21 | Requests | `activity_owner_requests.xml` | `ui.owner.OwnerRequestsActivity` |
+| 22 | Request details | `activity_owner_request_details.xml` | `ui.owner.OwnerRequestDetailsActivity` |
+| 23 | Schedule | `activity_owner_schedule.xml` | `ui.owner.OwnerScheduleActivity` |
 
 ### Reusable layouts
 
@@ -38,6 +45,10 @@ All player screens (01–16) from the Assignment 1 Figma design, built as XML la
 | `item_photo_thumb.xml` | Picked photo on Rate your game |
 | `item_saved_venue.xml` | Saved ground tile (2-column grid) |
 | `item_notification.xml` | One alert on the Alerts screen |
+| `item_owner_request_compact.xml` | Booking request card on Owner home |
+| `item_owner_request.xml` | Booking request card on Requests |
+| `item_owner_slot_open.xml`, `_booked.xml`, `_pending.xml` | Hour rows on the owner Schedule |
+| `view_owner_nav.xml` | Owner floating nav bar (Home, Requests, Schedule, Grounds) |
 | `view_player_nav.xml` | Floating bottom navigation bar |
 | `view_day_bar.xml` | 24-hour opening hours bar |
 
@@ -56,9 +67,11 @@ All player screens are connected, so the app can be clicked through on a phone o
 
 Splash (1.5 s) → Log in → Home → Search → Ground details → Pick a slot → Send request → Request sent → Your matches → Booking details → Rate your game. The floating nav bar switches between Home, Saved, Bookings, Alerts and Profile.
 
+The owner app opens from Profile → "Own a ground?", or by choosing "List my ground" at sign up: Owner home → Requests → Request details → Accept → Schedule, and Grounds → Add ground steps 1–3 → Publish.
+
 - Navigation helpers: `ui/Nav.kt`
-- Sample data and list adapters: `demo/DemoData.kt`, `demo/DemoAdapters.kt` (temporary, replaced by the local database and server API in the next phase)
+- Sample data and list adapters: `demo/DemoData.kt`, `demo/DemoAdapters.kt`, `demo/OwnerDemoData.kt`, `demo/OwnerAdapters.kt` (temporary, replaced by the local database and server API in the next phase)
 
 ## Build
 
-Open the project folder in Android Studio and let Gradle sync. AGP 9.1.1 (built-in Kotlin), Gradle 9.3.1, runs on JDK 17–25. compileSdk 35, minSdk 26.
+Open the project folder in Android Studio and let Gradle sync. AGP 9.3.3 (built-in Kotlin), Gradle 9.5.0, runs on JDK 17–25. compileSdk 35, minSdk 26.

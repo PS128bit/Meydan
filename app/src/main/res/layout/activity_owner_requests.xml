@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 21 Requests: Pending / Accepted / Declined, one card per booking request -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mist"
+    tools:context=".ui.owner.OwnerRequestsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/screen_margin"
+            android:paddingTop="24dp"
+            android:paddingEnd="@dimen/screen_margin">
+
+            <TextView
+                style="@style/Text.Meydan.Display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/owner_nav_requests"
+                android:textSize="32sp" />
+
+            <TextView
+                android:id="@+id/txtNewCount"
+                style="@style/Text.Meydan.Badge"
+                android:layout_marginStart="12dp"
+                android:backgroundTint="@color/vault_yellow"
+                android:textColor="@color/obsidian"
+                tools:text="4 new" />
+        </LinearLayout>
+
+        <!-- Segmented control -->
+        <RadioGroup
+            android:id="@+id/segRequestStatus"
+            style="@style/Widget.Meydan.SegmentTrack"
+            android:layout_marginStart="@dimen/screen_margin"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="@dimen/screen_margin"
+            android:checkedButton="@+id/segPending">
+
+            <RadioButton
+                android:id="@+id/segPending"
+                style="@style/Widget.Meydan.Segment"
+                android:text="@string/owner_tab_pending" />
+
+            <RadioButton
+                android:id="@+id/segAccepted"
+                style="@style/Widget.Meydan.Segment"
+                android:text="@string/owner_tab_accepted" />
+
+            <RadioButton
+                android:id="@+id/segDeclined"
+                style="@style/Widget.Meydan.Segment"
+                android:text="@string/owner_tab_declined" />
+        </RadioGroup>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvOwnerRequests"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/screen_margin"
+            android:paddingTop="16dp"
+            android:paddingEnd="@dimen/screen_margin"
+            android:paddingBottom="@dimen/nav_clearance"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_owner_request" />
+    </LinearLayout>
+
+    <!-- Shown when a tab has no requests -->
+    <TextView
+        android:id="@+id/txtRequestsEmpty"
+        style="@style/Text.Meydan.Body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="40dp"
+        android:text="@string/owner_requests_empty"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/bottomNav"
+        layout="@layout/view_owner_nav" />
+</FrameLayout>

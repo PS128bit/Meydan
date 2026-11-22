@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Schedule row: open hour the owner can block -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/txtSlotTime"
+        android:layout_width="56dp"
+        android:layout_height="52dp"
+        android:fontFamily="@font/space_grotesk_bold"
+        android:gravity="center_vertical"
+        android:textColor="@color/slate"
+        android:textSize="13sp"
+        tools:text="4 PM" />
+
+    <LinearLayout
+        android:id="@+id/cardSlot"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_slot_open_light"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            style="@style/Text.Meydan.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/owner_slot_open"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/btnBlockSlot"
+            style="@style/Text.Meydan.Link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/owner_slot_block"
+            android:textSize="13sp" />
+    </LinearLayout>
+</LinearLayout>

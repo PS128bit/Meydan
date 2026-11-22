@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 19 Add ground, step 2: photos (uploaded to the server) and hourly prices -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.owner.AddGroundPhotosActivity">
+
+    <!-- Step header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/screen_margin"
+        android:paddingTop="12dp"
+        android:paddingEnd="@dimen/screen_margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                style="@style/Widget.Meydan.RoundIcon"
+                android:contentDescription="@string/back"
+                android:src="@drawable/ic_back" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                style="@style/Text.Meydan.Badge"
+                android:backgroundTint="@color/mist"
+                android:fontFamily="@font/space_grotesk_bold"
+                android:paddingStart="12dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="6dp"
+                android:text="@string/owner_step_2"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <View style="@style/Widget.Meydan.StepBar.Done" />
+            <View style="@style/Widget.Meydan.StepBar.Done" android:layout_marginStart="6dp" />
+            <View style="@style/Widget.Meydan.StepBar" android:layout_marginStart="6dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/screen_margin"
+            android:paddingEnd="@dimen/screen_margin"
+            android:paddingBottom="24dp">
+
+            <TextView
+                style="@style/Text.Meydan.Display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/owner_add2_title"
+                android:textSize="30sp" />
+
+            <TextView
+                style="@style/Text.Meydan.Body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/owner_add2_body"
+                android:textSize="14sp" />
+
+            <!-- Photo grid: cover on the left, two photos on the right -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.8">
+
+                    <ImageView
+                        android:id="@+id/imgCoverPhoto"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_photo"
+                        android:contentDescription="@string/owner_cover_photo"
+                        android:padding="34dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/court_futsal" />
+
+                    <TextView
+                        style="@style/Text.Meydan.Badge"
+                        android:layout_gravity="start|bottom"
+                        android:layout_margin="12dp"
+                        android:backgroundTint="@color/mint"
+                        android:fontFamily="@font/space_grotesk_bold"
+                        android:letterSpacing="0.1"
+                        android:text="@string/owner_cover"
+                        android:textColor="@color/obsidian"
+                        android:textSize="11sp" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/imgPhoto2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_photo"
+                            android:contentDescription="@string/cd_venue_photo"
+                            android:padding="18dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/court_futsal" />
+
+                        <ImageButton
+                            android:id="@+id/btnRemovePhoto2"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="top|end"
+                            android:layout_margin="7dp"
+                            android:background="@drawable/bg_circle"
+                            android:contentDescription="@string/cd_remove_photo"
+                            android:padding="5dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_close" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/imgPhoto3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_photo"
+                            android:contentDescription="@string/cd_venue_photo"
+                            android:padding="18dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/court_hall" />
+
+                        <ImageButton
+                            android:id="@+id/btnRemovePhoto3"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="top|end"
+                            android:layout_margin="7dp"
+                            android:background="@drawable/bg_circle"
+                            android:contentDescription="@string/cd_remove_photo"
+                            android:padding="5dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_close" />
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Uploading + add photo -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/cardUploading"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rounded_16"
+                    android:backgroundTint="@color/mist"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Text.Meydan"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_semibold"
+                            android:text="@string/owner_uploading"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/txtUploadPercent"
+                            style="@style/Text.Meydan.Number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/mint_dark"
+                            android:textSize="13sp"
+                            tools:text="60%" />
+                    </LinearLayout>
+
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/progressUpload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:progress="60"
+                        app:indicatorColor="@color/mint"
+                        app:trackColor="@color/mist_2"
+                        app:trackCornerRadius="3dp"
+                        app:trackThickness="6dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnAddPhoto"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_dashed_box_white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_plus" />
+
+                    <TextView
+                        style="@style/Text.Meydan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/inter_semibold"
+                        android:text="@string/owner_add_photo"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                style="@style/Text.Meydan.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:drawablePadding="8dp"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/owner_upload_note"
+                android:textSize="12sp"
+                app:drawableStartCompat="@drawable/ic_upload"
+                app:drawableTint="@color/slate" />
+
+            <!-- Prices -->
+            <TextView
+                style="@style/Text.Meydan.Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/owner_pricing" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/cardPriceStandard"
+                    style="@style/Widget.Meydan.FactBox"
+                    android:layout_marginEnd="5dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Text.Meydan.CardTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/owner_price_standard"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:contentDescription="@string/owner_edit_price"
+                            android:src="@drawable/ic_edit" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/Text.Meydan.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/owner_price_all_day"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Text.Meydan.Number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="3dp"
+                            android:text="@string/owner_rs"
+                            android:textColor="@color/slate"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/txtPriceStandard"
+                            style="@style/Text.Meydan.Number.Big"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:textSize="28sp"
+                            tools:text="4,000" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cardPricePeak"
+                    style="@style/Widget.Meydan.FactBox"
+                    android:layout_marginStart="5dp"
+                    android:backgroundTint="@color/yellow_tint"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Text.Meydan.CardTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/owner_price_peak"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:contentDescription="@string/owner_edit_price"
+                            android:src="@drawable/ic_edit" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/Text.Meydan.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/owner_price_peak_hours"
+                        android:textColor="@color/yellow_dark"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Text.Meydan.Number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="3dp"
+                            android:text="@string/owner_rs"
+                            android:textColor="@color/yellow_dark"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/txtPricePeak"
+                            style="@style/Text.Meydan.Number.Big"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:textSize="28sp"
+                            tools:text="5,000" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="8dp"
+        android:paddingStart="@dimen/screen_margin"
+        android:paddingTop="12dp"
+        android:paddingEnd="@dimen/screen_margin"
+        android:paddingBottom="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNextAvailability"
+            style="@style/Widget.Meydan.Button.Dark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/owner_next_availability"
+            app:icon="@drawable/ic_arrow_right" />
+    </LinearLayout>
+</LinearLayout>

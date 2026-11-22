@@ -8,6 +8,8 @@ import com.google.android.material.materialswitch.MaterialSwitch
 import com.supernova.meydan.R
 import com.supernova.meydan.demo.DemoData
 import com.supernova.meydan.ui.auth.LoginActivity
+import com.supernova.meydan.ui.navigate
+import com.supernova.meydan.ui.owner.OwnerHomeActivity
 import com.supernova.meydan.ui.setupPlayerNav
 import com.supernova.meydan.ui.startFresh
 import com.supernova.meydan.ui.toast
@@ -51,9 +53,7 @@ class ProfileActivity : AppCompatActivity() {
             R.id.rowPassword, R.id.rowHelp, R.id.rowPrivacy).forEach { id ->
             findViewById<View>(id).setOnClickListener(comingSoon)
         }
-        findViewById<View>(R.id.cardOwnerMode).setOnClickListener {
-            toast("Owner mode is being built by Umair")
-        }
+        findViewById<View>(R.id.cardOwnerMode).setOnClickListener { navigate(OwnerHomeActivity::class.java) }
         findViewById<View>(R.id.btnLogout).setOnClickListener { startFresh(LoginActivity::class.java) }
     }
 }

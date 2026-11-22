@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.card.MaterialCardView
 import com.supernova.meydan.R
 import com.supernova.meydan.ui.colorOf
+import com.supernova.meydan.ui.owner.OwnerHomeActivity
 import com.supernova.meydan.ui.player.HomeActivity
 import com.supernova.meydan.ui.startFresh
 import com.supernova.meydan.ui.tintBackground
@@ -16,6 +17,7 @@ class SignupActivity : AppCompatActivity() {
 
     private lateinit var cardPlayer: MaterialCardView
     private lateinit var cardOwner: MaterialCardView
+    private var isOwner = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,12 +31,15 @@ class SignupActivity : AppCompatActivity() {
 
         findViewById<View>(R.id.btnBack).setOnClickListener { finish() }
         findViewById<View>(R.id.txtGoToLogin).setOnClickListener { finish() }
-        // Owner screens are built separately; for now both roles land on the player Home.
-        findViewById<View>(R.id.btnCreateAccount).setOnClickListener { startFresh(HomeActivity::class.java) }
+        // Players land on Home, ground owners on Owner home
+        findViewById<View>(R.id.btnCreateAccount).setOnClickListener {
+            startFresh(if (isOwner) OwnerHomeActivity::class.java else HomeActivity::class.java)
+        }
     }
 
     /** Selected card turns dark, the other turns light. */
     private fun selectRole(player: Boolean) {
+        isOwner = !player
         styleCard(cardPlayer, R.id.imgRolePlayer, R.id.txtRolePlayerTitle, R.id.txtRolePlayerSub, player)
         styleCard(cardOwner, R.id.imgRoleOwner, R.id.txtRoleOwnerTitle, R.id.txtRoleOwnerSub, !player)
     }

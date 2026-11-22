@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 23 Schedule: ground switcher, date strip, day summary, hourly timeline -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mist"
+    tools:context=".ui.owner.OwnerScheduleActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/nav_clearance">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="24dp">
+
+            <TextView
+                style="@style/Text.Meydan.Display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:text="@string/owner_nav_schedule"
+                android:textSize="32sp" />
+
+            <!-- Ground switcher -->
+            <LinearLayout
+                android:id="@+id/btnGroundSwitcher"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:background="@drawable/bg_pill"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_building" />
+
+                <TextView
+                    android:id="@+id/txtScheduleGround"
+                    style="@style/Text.Meydan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/inter_semibold"
+                    tools:text="Kickoff Futsal Arena" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_chevron_down" />
+            </LinearLayout>
+
+            <!-- Date strip -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvScheduleDays"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/screen_margin"
+                android:paddingEnd="12dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="6"
+                tools:listitem="@layout/item_day" />
+
+            <!-- Day summary -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/screen_margin"
+                android:paddingEnd="@dimen/screen_margin">
+
+                <TextView
+                    android:id="@+id/txtCountBooked"
+                    style="@style/Text.Meydan.Badge"
+                    android:backgroundTint="@color/obsidian"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    tools:text="4 booked" />
+
+                <TextView
+                    android:id="@+id/txtCountPending"
+                    style="@style/Text.Meydan.Badge"
+                    android:layout_marginStart="8dp"
+                    android:backgroundTint="@color/vault_yellow"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:textColor="@color/obsidian"
+                    android:textSize="13sp"
+                    tools:text="1 pending" />
+
+                <TextView
+                    android:id="@+id/txtCountOpen"
+                    style="@style/Text.Meydan.Badge"
+                    android:layout_marginStart="8dp"
+                    android:backgroundTint="@color/mint_tint"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:textColor="@color/mint_dark"
+                    android:textSize="13sp"
+                    tools:text="6 open" />
+            </LinearLayout>
+
+            <!-- Timeline: rows are item_owner_slot_open / _booked / _pending -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvScheduleSlots"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:nestedScrollingEnabled="false"
+                android:paddingStart="@dimen/screen_margin"
+                android:paddingEnd="@dimen/screen_margin"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="5"
+                tools:listitem="@layout/item_owner_slot_booked" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/bottomNav"
+        layout="@layout/view_owner_nav" />
+</FrameLayout>

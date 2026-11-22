@@ -144,10 +144,14 @@ class ReviewAdapter(private val items: List<Review>) : RecyclerView.Adapter<Simp
     }
 }
 
-/** Date strip on Pick a slot. The selected day turns mint. */
+/**
+ * Date strip. Dark version (Pick a slot): selected day turns mint.
+ * [light] version (owner Schedule): white cells, selected day turns obsidian.
+ */
 class DayAdapter(
     private val items: List<Day>,
     private var selected: Int,
+    private val light: Boolean = false,
     private val onSelect: (Day) -> Unit,
 ) : RecyclerView.Adapter<SimpleVH>() {
 
@@ -159,15 +163,27 @@ class DayAdapter(
         val day = items[position]
         val v = holder.itemView
         val isSelected = position == selected
+        val bg: Int
+        val nameColor: Int
+        val numberColor: Int
+        if (light) {
+            bg = if (isSelected) R.color.obsidian else R.color.white
+            nameColor = if (isSelected) R.color.mint else R.color.slate
+            numberColor = if (isSelected) R.color.white else R.color.obsidian
+        } else {
+            bg = if (isSelected) R.color.mint else R.color.charcoal_raised
+            nameColor = if (isSelected) R.color.obsidian else R.color.slate_light
+            numberColor = if (isSelected) R.color.obsidian else R.color.white
+        }
         v.findViewById<TextView>(R.id.txtDayName).apply {
             text = day.name
-            setTextColor(context.getColor(if (isSelected) R.color.obsidian else R.color.slate_light))
+            setTextColor(context.getColor(nameColor))
         }
         v.findViewById<TextView>(R.id.txtDayNumber).apply {
             text = day.number
-            setTextColor(context.getColor(if (isSelected) R.color.obsidian else R.color.white))
+            setTextColor(context.getColor(numberColor))
         }
-        v.tintBackground(if (isSelected) R.color.mint else R.color.charcoal_raised)
+        v.tintBackground(bg)
         v.setOnClickListener {
             val old = selected
             selected = holder.bindingAdapterPosition

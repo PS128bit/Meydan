@@ -80,6 +80,34 @@
             android:name=".ui.player.ProfileActivity"
             android:exported="false"
             android:theme="@style/Theme.Meydan.Dark" />
+        <!-- Owner screens -->
+        <activity
+            android:name=".ui.owner.OwnerHomeActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Meydan.Dark" />
+        <activity
+            android:name=".ui.owner.OwnerRequestsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.owner.OwnerRequestDetailsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Meydan.Dark" />
+        <activity
+            android:name=".ui.owner.OwnerScheduleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.owner.AddGroundDetailsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Meydan.White"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.owner.AddGroundPhotosActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Meydan.White" />
+        <activity
+            android:name=".ui.owner.AddGroundAvailabilityActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Meydan.White" />
     </application>
 
 </manifest>
